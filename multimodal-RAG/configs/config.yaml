@@ -1,0 +1,66 @@
+# ============================================================
+# 多模态客服智能体 - 主配置文件
+# ============================================================
+
+# --- 大语言模型 ---
+llm:
+  model: "deepseek-v4-flash"
+  provider: "openai"
+  temperature: 0.2
+  timeout: 60
+  max_tokens: 4000
+
+# 多模态模型（用于图片理解、caption 生成）
+multimodal_llm:
+  model: "moonshot-v1-8k"
+  provider: "openai"
+  temperature: 0.2
+  timeout: 60
+  max_tokens: 1000
+
+# --- Embedding 模型 ---
+embeddings:
+  model_name: "BAAI/bge-m3"  # 多语言模型，同时支持中英文
+
+# --- 数据路径 ---
+data:
+  manuals_path: "./data/manuals"        # 存放 [text, [image_ids]] 格式的 JSON 文件
+  images_path: "./data/images"          # 配图文件（按图片ID命名）
+  chunks_output: "./data_processed/chunks/chunks.jsonl"
+  # 可选；留空则由 Agent 在同目录下探测 chunks_parents.jsonl
+  chunks_parents_output: ""
+
+# --- 向量数据库 ---
+vector_store:
+  type: "faiss"
+  index_path: "./index/text_index/faiss"
+
+# --- 文本切分 ---
+chunking:
+  chunk_size: 1200
+  chunk_overlap: 100
+  strip_dot_leader_lines: true
+  dot_run_max_allowed: 10
+  strip_heading_hashes: true  # 切分完成后去掉标题行前缀 #
+  use_parent_document_retrieval: true
+  child_chunk_size: 450
+  child_chunk_overlap: 90
+
+# --- 检索参数 ---
+retrieval:
+  # 粗排候选：提高向量/BM25 原始召回后，用 RRF 融合排序再进入后续筛选
+  search_k: 50
+  rerank_top_n: 20
+  use_rerank: false
+  flashrank_model: "ms-marco-MiniLM-L-12-v2"
+  flashrank_cache_dir: "./models/flashrank"
+  rag_relevance_threshold: 0.4
+  rag_fallback_relevance_threshold: 0.25
+  use_hybrid_bm25: true
+  vector_top_k: 40
+  bm25_top_k: 40
+  rrf_k: 60
+  rag_max_context_documents: 40
+  english_rag_only_no_customer_service_llm: true
+  use_query_rewrite: true
+  query_rewrite_languages: ["zh"]

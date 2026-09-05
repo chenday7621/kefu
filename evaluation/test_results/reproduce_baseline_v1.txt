@@ -1,0 +1,262 @@
+synced zh=163 en=187
+{
+  "thresholds": {
+    "C2": 0.8,
+    "C1t": 0.6,
+    "C1p": 0.8
+  },
+  "ngram_n": 3,
+  "min_chunk_ngrams_for_reverse": 15,
+  "normalization": "strip whitespace/punct, lowercase (check_mapping.norm)",
+  "zh_lines_policy": "never line-extract for zh (line numbers verified inaccurate)",
+  "questions": 350,
+  "coverage": {
+    "chunk": 235,
+    "doc": 328,
+    "image": 296,
+    "neither_chunk_nor_image": 14,
+    "per_lang": {
+      "en_chunk": 157,
+      "en_doc": 165,
+      "en_image": 147,
+      "zh_chunk": 78,
+      "zh_doc": 163,
+      "zh_image": 149
+    }
+  },
+  "ref_stats": {
+    "ref_below_thr_C1p": 360,
+    "ref_below_thr_C1t": 27,
+    "ref_below_thr_C2": 1,
+    "ref_doc_not_found": 7,
+    "ref_lines_unreadable": 1,
+    "ref_mapped_C1p": 81,
+    "ref_mapped_C1t": 84,
+    "ref_mapped_C2": 1102,
+    "ref_no_file": 87
+  },
+  "gold_jsonl_sha256": "5f78bf1b6b30fe40c93d3720fe4ee695f1145028746a02cbf278df1fb92ca294"
+}
+
+gold -> /home/chenyi/projects/InterX/evaluation/gold/gold.jsonl
+{
+  "question_count": 350,
+  "answer_count": 350,
+  "record_count": 350,
+  "duplicate_question_ids": [],
+  "duplicate_answer_ids": [],
+  "missing_question_ids": [],
+  "missing_answer_ids": [],
+  "quality_status_counts": {
+    "silver": 349,
+    "verified": 1
+  },
+  "error_counts": {},
+  "warning_counts": {
+    "id305_format_normalized_semantics_unchanged": 1,
+    "id65_source_binding_repaired_from_blower_manual": 1
+  },
+  "chunk_gold_count": 235,
+  "doc_gold_count": 328,
+  "image_gold_count": 296
+}
+{
+  "counts": {
+    "train": {
+      "count": 243,
+      "zh": 116,
+      "en": 127,
+      "chunk": 164,
+      "doc": 229,
+      "image": 198
+    },
+    "dev": {
+      "count": 54,
+      "zh": 22,
+      "en": 32,
+      "chunk": 36,
+      "doc": 50,
+      "image": 51
+    },
+    "heldout": {
+      "count": 53,
+      "zh": 25,
+      "en": 28,
+      "chunk": 35,
+      "doc": 49,
+      "image": 47
+    }
+  },
+  "split_hash": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c"
+}
+{
+  "schema_version": "gold-reference-v2",
+  "dataset_name": "InterX-350 Silver Benchmark",
+  "record_count": 350,
+  "quality_status_counts": {
+    "silver": 349,
+    "verified": 1,
+    "quarantined": 0
+  },
+  "coverage": {
+    "chunk": 235,
+    "document": 328,
+    "image": 296,
+    "evidence_text": 250
+  },
+  "dataset_hash": "018a03ddbba5a649cddeb8fed677352f958c60853121a2e316d820b079bd8ae2",
+  "legacy_reference_hash": "5f78bf1b6b30fe40c93d3720fe4ee695f1145028746a02cbf278df1fb92ca294",
+  "schema_hash": "4f4977d46d10ae8c51ff41ca0e292b312d47ceb5eee87c57b0249d92a90af1ad",
+  "references_hash": "262786ea0604d6e4e01e71e74aeb1de08f81e209aadbea62309e4f3e5d9774b8",
+  "build_script": "evaluation/scripts/build_gold_v2.py",
+  "sample_ids": [
+    "65",
+    "70",
+    "242",
+    "153",
+    "303"
+  ]
+}
+{
+  "status": "pass",
+  "records": 350,
+  "errors": []
+}
+Loaded 40 manual mappings
+Resolved 1700/1799 refs (99 unresolved)
+Output: kg/state/v1_source_rebuild/evidence_resolved.json
+Loading chunks for 39 manuals...
+Mapped: 1700/1799 records
+Multi-chunk refs: 484
+Unmapped: 99
+Output: kg/state/v1_source_rebuild/evidence_mapped.json
+{
+  "schema_version": "kg-train-only-v1",
+  "split_source": "train-only",
+  "build_timestamp": "2026-09-04T12:12:53+00:00",
+  "source_dataset_hash": "018a03ddbba5a649cddeb8fed677352f958c60853121a2e316d820b079bd8ae2",
+  "split_hash": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c",
+  "source_mapped_hash": "4ca6a8464713b17ff4d7ec3493b265e9141b9f92c8ace75697169faa3c1677ae",
+  "source_semantic_hash": "8f2887d15dee79895c5b93ec4130d762f15b429e01ecb44f5d623961412f07c2",
+  "mapped_output_hash": "fda5ebed9688daa07ff95796ccc80d80a07b4584635eca728fc74204f3cc1333",
+  "semantic_output_hash": "6f922fc5e14bcb77e1aec0be9554a99258322405ee00c3821b747734e8d9e228",
+  "mapped_records": 1315,
+  "semantic_edges": 762,
+  "source_answer_ids": 243,
+  "dev_answer_id_overlap": [],
+  "heldout_answer_id_overlap": [],
+  "leakage_status": "pass",
+  "official_baseline_v1_runtime_policy": "KG disabled until the train-only graph path is wired and runtime-audited"
+}
+human_sample=50 out=/home/chenyi/projects/InterX/evaluation/judge/calibration/sample_v1
+{
+  "schema_version": "baseline-v1-environment-manifest",
+  "generated_at": "2026-09-04T16:40:33+00:00",
+  "dataset_name": "InterX-350 Silver Benchmark",
+  "git": {
+    "head": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+    "tags_at_head": [
+      "phase1-baseline"
+    ],
+    "worktree_clean": false,
+    "baseline_v1_tag": null
+  },
+  "runtime": {
+    "python": "3.12.8",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "workers": 1,
+    "concurrency": 1,
+    "warmup_ids": [
+      241
+    ],
+    "reload_policy": "startup_once",
+    "kg_enabled": false
+  },
+  "hashes": {
+    "dataset": "018a03ddbba5a649cddeb8fed677352f958c60853121a2e316d820b079bd8ae2",
+    "split": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c",
+    "gold_v2": "262786ea0604d6e4e01e71e74aeb1de08f81e209aadbea62309e4f3e5d9774b8",
+    "gold_v2_schema": "4f4977d46d10ae8c51ff41ca0e292b312d47ceb5eee87c57b0249d92a90af1ad",
+    "kg_build_manifest": "4b22a52e3527124cb3c5e14e8acece847d354e386cc9118d266079182186cab7",
+    "kg_mapped": "fda5ebed9688daa07ff95796ccc80d80a07b4584635eca728fc74204f3cc1333",
+    "kg_semantic": "6f922fc5e14bcb77e1aec0be9554a99258322405ee00c3821b747734e8d9e228",
+    "baseline_protocol": "a491de72cd980fdb81ba5c358dc9bf94f141a99d39e31eb23c23611f4265e320",
+    "answer_config": "b1a6f3b07011766878079f8cceab740ef7f167b13f13cfa48b87bac8f2dec3db",
+    "retrieval_config": "78042e097bf84aeeb74f87c1ee8b475695c83ce44ac026519048a8211af481a5",
+    "dependency_lock": "c3ac78b0f98f4bd58348e6ddb125f009cce9a90475f62a3d8ff3662aa1c12f65",
+    "corpus_parts": {
+      "manual_artifacts_tree": "bbbe6a72dcc6e9f841ec5b1d151ee475c33e0418536ea1106363849b7e6cc926",
+      "milvus_lite_tree": "2f7392488ed623b1dfceff142021ef96b12d79e8cb37c6ae2b8b753d5a7dc555"
+    },
+    "corpus": "c61267821fead7178cdd94fb0e686fd5146e0cacf722f6fd0c0cbde6569a5303"
+  },
+  "models": {
+    "answer": "qwen3.6-plus",
+    "rewrite": "qwen3-max",
+    "embedding": "qwen3-vl-embedding",
+    "reranker": "qwen3-rerank",
+    "provider_revision": "unavailable_until_successful_gateway_run"
+  },
+  "inputs_present": {
+    "corpus": true,
+    "vector_db": true,
+    "gold_v2": true,
+    "dev_split": true,
+    "heldout_split": true
+  }
+}
+{
+  "schema_version": "secret-permission-audit-v1",
+  "status": "pass",
+  "files": [
+    {
+      "path": "answer/.env",
+      "mode": "0o600",
+      "secure": true
+    },
+    {
+      "path": "chat/.env",
+      "mode": "0o600",
+      "secure": true
+    },
+    {
+      "path": "gateway/.env",
+      "mode": "0o600",
+      "secure": true
+    },
+    {
+      "path": "kg/.env",
+      "mode": "0o600",
+      "secure": true
+    },
+    {
+      "path": "process/.env",
+      "mode": "0o600",
+      "secure": true
+    },
+    {
+      "path": "retrieval/.env",
+      "mode": "0o600",
+      "secure": true
+    },
+    {
+      "path": "web/.env",
+      "mode": "0o600",
+      "secure": true
+    }
+  ]
+}
+........................................................................ [ 83%]
+..............                                                           [100%]
+=============================== warnings summary ===============================
+.venv-baseline-v1/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/chenyi/projects/InterX/.venv-baseline-v1/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv-baseline-v1/lib/python3.12/site-packages/starlette/testclient.py:53
+  /home/chenyi/projects/InterX/.venv-baseline-v1/lib/python3.12/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+86 passed, 2 warnings in 29.83s
+Baseline V1 deterministic preparation complete.

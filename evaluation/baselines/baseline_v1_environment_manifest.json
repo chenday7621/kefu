@@ -1,0 +1,56 @@
+{
+  "dataset_name": "InterX-350 Silver Benchmark",
+  "generated_at": "2026-09-04T16:40:33+00:00",
+  "git": {
+    "baseline_v1_tag": null,
+    "head": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+    "tags_at_head": [
+      "phase1-baseline"
+    ],
+    "worktree_clean": false
+  },
+  "hashes": {
+    "answer_config": "b1a6f3b07011766878079f8cceab740ef7f167b13f13cfa48b87bac8f2dec3db",
+    "baseline_protocol": "a491de72cd980fdb81ba5c358dc9bf94f141a99d39e31eb23c23611f4265e320",
+    "corpus": "c61267821fead7178cdd94fb0e686fd5146e0cacf722f6fd0c0cbde6569a5303",
+    "corpus_parts": {
+      "manual_artifacts_tree": "bbbe6a72dcc6e9f841ec5b1d151ee475c33e0418536ea1106363849b7e6cc926",
+      "milvus_lite_tree": "2f7392488ed623b1dfceff142021ef96b12d79e8cb37c6ae2b8b753d5a7dc555"
+    },
+    "dataset": "018a03ddbba5a649cddeb8fed677352f958c60853121a2e316d820b079bd8ae2",
+    "dependency_lock": "c3ac78b0f98f4bd58348e6ddb125f009cce9a90475f62a3d8ff3662aa1c12f65",
+    "gold_v2": "262786ea0604d6e4e01e71e74aeb1de08f81e209aadbea62309e4f3e5d9774b8",
+    "gold_v2_schema": "4f4977d46d10ae8c51ff41ca0e292b312d47ceb5eee87c57b0249d92a90af1ad",
+    "kg_build_manifest": "4b22a52e3527124cb3c5e14e8acece847d354e386cc9118d266079182186cab7",
+    "kg_mapped": "fda5ebed9688daa07ff95796ccc80d80a07b4584635eca728fc74204f3cc1333",
+    "kg_semantic": "6f922fc5e14bcb77e1aec0be9554a99258322405ee00c3821b747734e8d9e228",
+    "retrieval_config": "78042e097bf84aeeb74f87c1ee8b475695c83ce44ac026519048a8211af481a5",
+    "split": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c"
+  },
+  "inputs_present": {
+    "corpus": true,
+    "dev_split": true,
+    "gold_v2": true,
+    "heldout_split": true,
+    "vector_db": true
+  },
+  "models": {
+    "answer": "qwen3.6-plus",
+    "embedding": "qwen3-vl-embedding",
+    "provider_revision": "unavailable_until_successful_gateway_run",
+    "reranker": "qwen3-rerank",
+    "rewrite": "qwen3-max"
+  },
+  "runtime": {
+    "concurrency": 1,
+    "kg_enabled": false,
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.8",
+    "reload_policy": "startup_once",
+    "warmup_ids": [
+      241
+    ],
+    "workers": 1
+  },
+  "schema_version": "baseline-v1-environment-manifest"
+}

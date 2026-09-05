@@ -1,0 +1,38 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.venv*/
+.env
+*.pem
+*.key
+*.p12
+*.pfx
+.pytest_cache/
+*.egg-info/
+.vscode/
+.DS_Store
+
+# Runtime artifacts
+process/artifacts/
+process/data/插图/
+kg/state/graph.db/
+chat/sessions/
+gateway/logs/
+gateway/state/
+gateway/tests/results/
+audit/DOWNLOAD_FOR_CHATGPT/
+
+# Skill logs
+.agents/**/logs/
+*/.agents/**/logs/
+
+# Image zip files (use .gitkeep for directory structure)
+data/ch-manual/插图/
+data/en-manual/插图/
+
+# Build artifacts
+
+# Deprecated packages
+batch/
+optimize/

@@ -1,0 +1,11 @@
+{
+  "metrics_available": false,
+  "no_phase1_substitution": true,
+  "preflight": "evaluation/results/baseline_v1/preflight/gateway_probe.json",
+  "raw_results_available": false,
+  "reason": "frozen answer-model completion preflight failed; see gateway and network preflight artifacts",
+  "recorded_at": "2026-09-04T16:41:15+00:00",
+  "schema_version": "formal-run-status-v1",
+  "split": "dev",
+  "status": "NOT_RUN_PRECONDITION_FAILED"
+}

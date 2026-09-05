@@ -1,0 +1,13 @@
+{
+  "status": "pass_offline",
+  "python": "3.12.8",
+  "clean_environment": true,
+  "tests_passed": 87,
+  "tests_failed": 0,
+  "warnings": 2,
+  "compileall": "pass",
+  "reproduction_script": "pass_offline",
+  "online_smoke": "fail_unstable_upstream_transport_and_completion_timeout",
+  "formal_dev": "not_run_precondition_failed",
+  "formal_heldout": "not_run_precondition_failed"
+}

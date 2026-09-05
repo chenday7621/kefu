@@ -1,0 +1,8 @@
+{
+  "schema_version": "retrieval-preflight-v1",
+  "status": "fail",
+  "timeout_seconds": 180,
+  "failure_stage": "embedding_or_upstream_retrieval_call",
+  "error": "external retrieval smoke exceeded hard timeout",
+  "formal_metrics_generated": false
+}

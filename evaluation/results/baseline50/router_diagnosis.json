@@ -1,0 +1,264 @@
+{
+  "router_model_name_in_answer_config": "qwen3.6-plus",
+  "gateway_model_mapping": [
+    {
+      "alias": "mimo-v2.5-pro",
+      "upstream_model": "openai/deepseek-v4-flash"
+    },
+    {
+      "alias": "qwen3-max",
+      "upstream_model": "openai/deepseek-v4-flash"
+    },
+    {
+      "alias": "qwen3.6-plus",
+      "upstream_model": "openai/deepseek-v4-flash"
+    }
+  ],
+  "production_router_params": {
+    "temperature": 0.0,
+    "max_tokens": 32,
+    "timeout_s": 10
+  },
+  "probes": [
+    {
+      "tag": "zh-manual",
+      "question": "空调制冷效果不太好怎么办？",
+      "ladder": [
+        {
+          "max_tokens": 32,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"manual\"}",
+          "content_len": 19,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"空调制冷效果不太好怎么办？\" 这是一个关于空调产品的问题，询问制冷效果不好怎么办，涉及具体产品的使用和 troubleshooting。因此应该归类为 manual。",
+          "completion_tokens": 46,
+          "prompt_tokens": 333,
+          "reasoning_tokens": 38,
+          "extract_json_ok": true,
+          "route": "manual",
+          "elapsed_s": 1.85
+        },
+        {
+          "max_tokens": 256,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"manual\"}",
+          "content_len": 19,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"空调制冷效果不太好怎么办？\" 这个问题是关于空调的使用问题，涉及具体产品（空调）的性能问题。用户询问制冷效果不好怎么办，这属于产品故障排查或使用问题，需要参考产品手册。根据分类规则，只要提到特定产品名称或组件，就应归类为\"manual\"。所以输出{\"route\": \"manual\"}",
+          "completion_tokens": 84,
+          "prompt_tokens": 333,
+          "reasoning_tokens": 76,
+          "extract_json_ok": true,
+          "route": "manual",
+          "elapsed_s": 2.29
+        },
+        {
+          "max_tokens": 1024,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"manual\"}",
+          "content_len": 19,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"空调制冷效果不太好怎么办？\" 这是关于空调产品的使用问题，涉及产品性能（制冷效果），需要查找具体的产品手册或故障排除指南。因此应分类为\"manual\"。",
+          "completion_tokens": 52,
+          "prompt_tokens": 333,
+          "reasoning_tokens": 44,
+          "extract_json_ok": true,
+          "route": "manual",
+          "elapsed_s": 1.33
+        }
+      ]
+    },
+    {
+      "tag": "zh-manual",
+      "question": "如何清洗洗碗机的喷淋臂？",
+      "ladder": [
+        {
+          "max_tokens": 32,
+          "finish_reason": "length",
+          "content": "",
+          "content_len": 0,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"如何清洗洗碗机的喷淋臂？\" 这涉及洗碗机这个具体产品的清洗方法，属于产品使用和维护。因此应",
+          "completion_tokens": 33,
+          "prompt_tokens": 335,
+          "reasoning_tokens": 32,
+          "extract_json_ok": false,
+          "extract_json_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+          "elapsed_s": 1.79
+        },
+        {
+          "max_tokens": 256,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"manual\"}",
+          "content_len": 19,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"如何清洗洗碗机的喷淋臂？\" 这个问题明确提到了\"洗碗机\"（dishwasher）这个具体产品，并且询问清洗喷淋臂（spray arm），这是产品维护/使用方面的具体问题。因此应该归为\"manual\"。",
+          "completion_tokens": 65,
+          "prompt_tokens": 335,
+          "reasoning_tokens": 57,
+          "extract_json_ok": true,
+          "route": "manual",
+          "elapsed_s": 1.23
+        },
+        {
+          "max_tokens": 1024,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"manual\"}",
+          "content_len": 19,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们判断用户问题：\"如何清洗洗碗机的喷淋臂？\" 提到了具体产品\"洗碗机\"和部件\"喷淋臂\"，属于产品使用/维护方面的问题，需要产品手册。因此分类为\"manual\"。",
+          "completion_tokens": 55,
+          "prompt_tokens": 335,
+          "reasoning_tokens": 47,
+          "extract_json_ok": true,
+          "route": "manual",
+          "elapsed_s": 1.94
+        }
+      ]
+    },
+    {
+      "tag": "en-manual",
+      "question": "How do I use the air fryer for the first time?",
+      "ladder": [
+        {
+          "max_tokens": 32,
+          "finish_reason": "length",
+          "content": "",
+          "content_len": 0,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "We need to classify the user question: \"How do I use the air fryer for the first time?\" This is clearly about using a specific product (air",
+          "completion_tokens": 33,
+          "prompt_tokens": 340,
+          "reasoning_tokens": 32,
+          "extract_json_ok": false,
+          "extract_json_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+          "elapsed_s": 1.73
+        },
+        {
+          "max_tokens": 256,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"manual\"}",
+          "content_len": 19,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"How do I use the air fryer for the first time?\" 这个问题明确提到了\"air fryer\"（空气炸锅），这是一个具体的产品。问题询问的是首次使用的方法，属于产品使用说明，因此需要查阅产品手册。根据分类规则，涉及具体产品、使用、设置等应归为\"manual\"。",
+          "completion_tokens": 80,
+          "prompt_tokens": 340,
+          "reasoning_tokens": 72,
+          "extract_json_ok": true,
+          "route": "manual",
+          "elapsed_s": 1.57
+        },
+        {
+          "max_tokens": 1024,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"manual\"}",
+          "content_len": 19,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"How do I use the air fryer for the first time?\" 这是一个关于如何使用特定产品（空气炸锅）的问题，涉及到产品的首次使用步骤。根据分类规则，这属于\"manual\"类别，因为问题明确提到了具体产品名称（air fryer），并且询问的是使用步骤。因此输出应为{\"route\": \"manual\"}。",
+          "completion_tokens": 84,
+          "prompt_tokens": 340,
+          "reasoning_tokens": 76,
+          "extract_json_ok": true,
+          "route": "manual",
+          "elapsed_s": 2.3
+        }
+      ]
+    },
+    {
+      "tag": "general",
+      "question": "你们的人工客服几点上班？",
+      "ladder": [
+        {
+          "max_tokens": 32,
+          "finish_reason": "length",
+          "content": "",
+          "content_len": 0,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"你们的人工客服几点上班？\" 这是一个关于客服工作时间的问题，属于一般客户服务询问，不涉及任何具体产品。因此",
+          "completion_tokens": 33,
+          "prompt_tokens": 333,
+          "reasoning_tokens": 32,
+          "extract_json_ok": false,
+          "extract_json_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+          "elapsed_s": 2.07
+        },
+        {
+          "max_tokens": 256,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"general\"}",
+          "content_len": 20,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"你们的人工客服几点上班？\" 这是一个关于客服工作时间的问题，属于一般客户服务咨询，不涉及具体产品手册。根据分类规则，应归类为\"general\"。",
+          "completion_tokens": 49,
+          "prompt_tokens": 333,
+          "reasoning_tokens": 41,
+          "extract_json_ok": true,
+          "route": "general",
+          "elapsed_s": 2.13
+        },
+        {
+          "max_tokens": 1024,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"general\"}",
+          "content_len": 20,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"你们的人工客服几点上班？\" 这是询问客服工作时间，属于平台/客服服务政策相关，不涉及任何具体产品。根据分类规则，应归为\"general\"。",
+          "completion_tokens": 50,
+          "prompt_tokens": 333,
+          "reasoning_tokens": 42,
+          "extract_json_ok": true,
+          "route": "general",
+          "elapsed_s": 1.34
+        }
+      ]
+    },
+    {
+      "tag": "general",
+      "question": "Can I get a refund for my order?",
+      "ladder": [
+        {
+          "max_tokens": 32,
+          "finish_reason": "length",
+          "content": "",
+          "content_len": 0,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们分析用户问题：\"Can I get a refund for my order?\" 这个问题是关于订单退款，属于退货/退款政策，属于一般客户服务范畴，",
+          "completion_tokens": 33,
+          "prompt_tokens": 336,
+          "reasoning_tokens": 32,
+          "extract_json_ok": false,
+          "extract_json_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+          "elapsed_s": 2.08
+        },
+        {
+          "max_tokens": 256,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"general\"}",
+          "content_len": 20,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "We need to classify the user question: \"Can I get a refund for my order?\" This is about refund policy, which falls under return and exchange policies. The question does not mention any specific produc",
+          "completion_tokens": 84,
+          "prompt_tokens": 336,
+          "reasoning_tokens": 76,
+          "extract_json_ok": true,
+          "route": "general",
+          "elapsed_s": 2.35
+        },
+        {
+          "max_tokens": 1024,
+          "finish_reason": "stop",
+          "content": "{\"route\": \"general\"}",
+          "content_len": 20,
+          "reasoning_content_present": true,
+          "reasoning_content_head": "我们判断用户问题：\"Can I get a refund for my order?\" 这是关于订单退款的问题，属于退货换货政策，是平台政策相关，不涉及具体产品手册。因此应分类为\"general\"。",
+          "completion_tokens": 53,
+          "prompt_tokens": 336,
+          "reasoning_tokens": 45,
+          "extract_json_ok": true,
+          "route": "general",
+          "elapsed_s": 1.98
+        }
+      ]
+    }
+  ]
+}

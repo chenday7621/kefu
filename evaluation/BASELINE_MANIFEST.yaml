@@ -1,0 +1,59 @@
+# InterX Original Baseline manifest — Phase 1
+# 记录基线运行的全部版本与配置约定，保证可复现。
+# 评测运行完成后需回填: run 段的日期与结果文件指纹。
+
+baseline_name: original-interx-phase1
+created: 2026-07-16
+
+code:
+  git_commit: 9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08
+  git_tag: phase1-baseline
+  note: >
+    工作区相对 commit 的实际内容改动仅 gateway/litellm/config.template.yaml
+    (+15 行模型别名) 与两个插图.zip（LFS 指针被解压产物替换）。
+    evaluation/ 目录为评测新增代码，不改动任何回答逻辑。
+
+models:
+  generation:
+    provider: DashScope (公共 compatible-mode, 经 litellm gateway :4000)
+    model: deepseek-v4-flash
+    aliases_used_by_code: [qwen3-max, qwen3.6-plus]   # 均路由到同一上游
+  embedding:
+    provider: DashScope (原生 API, 不经网关)
+    model: qwen3-vl-embedding    # 1024 维；Milvus 向量为其预计算，不可更换
+  rerank:
+    provider: DashScope
+    model: qwen3-rerank          # retrieval/configs/default.yaml
+  judge:
+    provider: 同 generation gateway
+    model_alias: qwen3-max       # answer/configs/default.yaml 的 judge_llm
+
+generation_params:
+  temperature: 0.1               # 项目原始配置，作为 Original Baseline 保留。
+                                 # 未按改造流程文档改为 0——有意决定，见 evaluation/README.md
+  query_rewrite_temperature: 0.7 # 仅进 metadata，不影响检索（answer/pipeline.py 注释）
+  max_retries_per_llm_call: 2
+  random_seed: 不适用（远程接口不保证 seed 生效，以 temperature+版本锁定近似）
+
+data:
+  benchmark: agentic-rag 351 题（zh 163 + en 188；en id=240 无标注答案）
+  vector_store: Milvus Lite, 7293 small chunks（预计算向量）
+  kg: 离线重建版 Kùzu，39 manuals，CO_EVIDENCE 边 19021 条（完整版为 48508，存在差异）
+  images: process/data/插图 2631 张
+  gold_mapping: evaluation/gold/gold.jsonl（构建参数：char-3gram，匹配阈值 0.55/候选 0.35）
+
+key_config:
+  retrieval_top_k: 20
+  kg_expansion: enabled (max_expanded=8)
+  rerank: enabled
+  semantic_cache: disabled（无 redis）
+  config_snapshots: evaluation/results/baseline/config_snapshot/
+
+run:                             # ← 评测完成后回填
+  smoke_5:   {date: null, ids: null}
+  batch_50:  {date: null}
+  full_351:  {date: null, errors: null}
+  results:
+    raw: evaluation/results/baseline/raw.jsonl
+    metrics: evaluation/results/baseline/metrics.json
+    judge: evaluation/results/baseline/judge.jsonl

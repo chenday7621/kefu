@@ -1,0 +1,94 @@
+# InterX Original Baseline 清单 — 第一阶段冻结基线
+# 依据《智能客服Agent项目改造流程.md》第一阶段产出物要求。
+# 本文件是基线的唯一权威来源；详细指标解读见 evaluation/BASELINE_350_REPORT.md。
+
+baseline_name: original-baseline-v1
+frozen_at: "2026-07-17"
+
+# ---- 版本锁定 ----
+git:
+  commit: 9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08
+  tag: phase1-baseline
+  note: 评测期间 answer/retrieval/kg/chat 代码零修改；评测框架位于 evaluation/（新增，不影响业务逻辑）
+
+dataset:
+  benchmark: agentic-rag 350 题（zh 163 / en 187；README 标称 351 系笔误，见 evaluation/VALIDATION_REPORT.md §1）
+  questions: [agentic-rag/ch-question.csv, agentic-rag/en-question.csv]
+  labels: agentic-rag/answers/*/per_question/*.json（350 份，5 种 evidence_refs 格式）
+  vector_store: process/artifacts/manual_chunks.db（7293 chunks，40 手册）
+  kg: kg/state/graph.db（离线重建版，CO_EVIDENCE 19021 边；39/40 手册，Twin_Tub 缺失为已知状态）
+
+models:
+  generation:
+    provider: DashScope compatible-mode（经 litellm 网关 :4000）
+    model: deepseek-v4-flash        # 推理模型；qwen3-max / qwen3.6-plus 均为其网关别名
+    temperature: 0.1                # 保留原项目值作为 Original Baseline（未按流程文档改 0，经确认记录在案）
+  embedding:
+    model: qwen3-vl-embedding       # 1024 维，Milvus 向量为其预计算，不可更换
+  rerank:
+    model: qwen3-rerank             # enabled: true（retrieval/configs/default.yaml）
+
+prompts:
+  version: git 9679bd2 原版（answer/src/answer/prompts/、chat/src/chat/prompts/ 未改动）
+
+key_config:
+  retrieval_top_k: 20
+  channel_weights: {dense: 0.65, bm25: 0.35}
+  kg_expansion: enabled
+  router: 未修改（max_tokens=32，已知空返回→保守回退 RAG，根因诊断见 evaluation/results/baseline50/router_diagnosis.json）
+  config_snapshot: evaluation/results/baseline50/config_snapshot/（350 跑前逐项核对一致）
+
+seeds_and_determinism:
+  llm_temperature: 0.1（远程接口无种子保证，波动范围观察建议复跑）
+  sampling_seed: 20260716（50 题分层抽样 & 审计抽样）
+  gold_build: 确定性（无随机数），阈值 C1t=0.6 / C1p=0.8 / C2=0.8
+  gold_sha256: d46212986f74630212110c63e6b6a120862b92f87edd1de469eed35c8c7f111c
+
+# ---- 评测结果（2026-07-17，350/350 成功，0 错误；q193 重试 1 次成功） ----
+run:
+  dir: evaluation/results/baseline350/
+  date: "2026-07-17"
+  concurrency: 混合（zh 163 题全串行；en 部分 3 并发，质量无漂移：en hit@1 串行 0.756 vs 并发 0.786）
+  latency: {p50_s: 43.0, p95_s: 113.8, mean_s: 65.4, note: 含并发排队，与纯串行不可直接对比}
+
+metrics:
+  coverage: {chunk_eligible: 235, imgchunk_eligible: 296, doc_eligible: 328, total: 350}
+  retrieval_chunk_gold:   # Hit@1 语义经 12 题人工审计验证；Hit@5/MRR/Recall 因 Gold 欠覆盖(~25%)为保守下界
+    hit@1: 0.6213
+    hit@3: 0.7702
+    hit@5: 0.8383
+    mrr: 0.7139
+    recall@5: 0.2591    # en 受 C2 大 gold 集口径影响，勿单独解读
+  per_lang:
+    zh: {hit@1: 0.3077, hit@5: 0.6538, mrr: 0.4494, n: 78}   # 系统最大短板
+    en: {hit@1: 0.7771, hit@5: 0.9299, mrr: 0.8453, n: 157}
+  doc_routing: {doc_hit@1: 0.8994, doc_hit@5: 0.9817, n: 328}
+  images:
+    answer_image_recall: 0.479
+    answer_image_precision: 0.5697
+    answer_image_exact_match: 0.277
+    pic_placeholder_consistency: 1.0
+    imgchunk_hit@5: 0.4122   # 图片证据 chunk 检索通道（阈值无关交叉验证）
+  router:
+    calls: 350
+    failed_empty_return: 242   # zh 65/163=40%, en 177/187=95%
+    fallback_rag_success: 242  # 100%，零误路由；代价约 +1.5s/题
+    routed_general: 0
+
+artifacts:
+  raw_results: evaluation/results/baseline350/raw.jsonl   # 351 行（350 题 + q193 重试追加，读取按 id 取末条）
+  metrics: evaluation/results/baseline350/metrics.json
+  report: evaluation/BASELINE_350_REPORT.md
+  audits:
+    - evaluation/audits/zh_hit1_single_audit.md
+    - evaluation/audits/zh_hit1_full12_audit.md
+    - evaluation/audits/BASELINE_350_pending_audits.md   # zh hit@1=0 共 54 题待人工走查
+  gold: evaluation/gold/gold.jsonl + gold_build_config.json
+  validation: evaluation/VALIDATION_REPORT.md
+  backup: ~/backups/InterX-phase1-baseline-20260716.tar.gz（864MB）
+
+known_issues:
+  - 中文 chunk Hit@1=0.31，为后续改造第一优先收益点（54 题未命中中 27 题 rank2-5 近失，rerank 调优空间大）
+  - Router 空返回率 69%（en 95%），修复方案已知（max_tokens→256 或非推理模型），留待消融 B 版
+  - q207 单题 4525s 极端离群（上游重试硬扛）；q193 首跑空返回，重试即过
+  - Gold 欠覆盖约 25%（12 题审计估计），Hit@5/MRR/Recall 为保守下界

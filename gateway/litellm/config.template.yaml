@@ -1,0 +1,49 @@
+model_list:
+  - model_name: mimo-v2.5-pro
+    litellm_params:
+      model: openai/os.environ/UPSTREAM_1_MODEL
+      api_base: os.environ/UPSTREAM_1_BASE_URL
+      api_key: os.environ/UPSTREAM_1_API_KEY
+      rpm: os.environ/UPSTREAM_1_RPM
+      tpm: os.environ/UPSTREAM_1_TPM
+  # Aliases required by answer/chat configs — routed to the same upstream
+  - model_name: qwen3-max
+    litellm_params:
+      model: openai/os.environ/UPSTREAM_1_MODEL
+      api_base: os.environ/UPSTREAM_1_BASE_URL
+      api_key: os.environ/UPSTREAM_1_API_KEY
+      rpm: os.environ/UPSTREAM_1_RPM
+      tpm: os.environ/UPSTREAM_1_TPM
+  - model_name: qwen3.6-plus
+    litellm_params:
+      model: openai/os.environ/UPSTREAM_1_MODEL
+      api_base: os.environ/UPSTREAM_1_BASE_URL
+      api_key: os.environ/UPSTREAM_1_API_KEY
+      rpm: os.environ/UPSTREAM_1_RPM
+      tpm: os.environ/UPSTREAM_1_TPM
+  # Vision model for user-image understanding (answer vlm_llm) — same DashScope
+  # account as UPSTREAM_1, fixed upstream model name (not UPSTREAM_1_MODEL).
+  - model_name: qwen-vl-plus
+    litellm_params:
+      model: openai/qwen-vl-plus
+      api_base: os.environ/UPSTREAM_1_BASE_URL
+      api_key: os.environ/UPSTREAM_1_API_KEY
+      rpm: os.environ/UPSTREAM_1_RPM
+      tpm: os.environ/UPSTREAM_1_TPM
+
+litellm_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  # Baseline V1 must not emit verbose request payload logs by default.
+  set_verbose: false
+  drop_params: true
+  request_timeout: 600
+
+general_settings:
+  store_model_in_db: false
+  infer_model_from_keys: false
+  background_health_checks: false
+
+router_settings:
+  routing_strategy: simple-shuffle
+  allowed_fails: 3
+  cooldown_time: 30

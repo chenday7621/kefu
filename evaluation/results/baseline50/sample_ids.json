@@ -1,0 +1,192 @@
+{
+  "n": 50,
+  "ids": [
+    "66",
+    "80",
+    "86",
+    "104",
+    "130",
+    "136",
+    "154",
+    "164",
+    "167",
+    "172",
+    "177",
+    "183",
+    "195",
+    "196",
+    "197",
+    "200",
+    "214",
+    "215",
+    "216",
+    "217",
+    "225",
+    "226",
+    "229",
+    "241",
+    "245",
+    "255",
+    "263",
+    "280",
+    "286",
+    "290",
+    "301",
+    "302",
+    "308",
+    "311",
+    "314",
+    "319",
+    "320",
+    "325",
+    "349",
+    "350",
+    "366",
+    "374",
+    "386",
+    "395",
+    "401",
+    "410",
+    "411",
+    "417",
+    "418",
+    "436"
+  ],
+  "distinct_docs": 27,
+  "strata": [
+    {
+      "stratum": "en|C1p|chunk|noimg",
+      "population": 1,
+      "sampled": 1,
+      "ids": [
+        "241"
+      ]
+    },
+    {
+      "stratum": "en|C2|chunk|img",
+      "population": 123,
+      "sampled": 17,
+      "ids": [
+        "366",
+        "314",
+        "290",
+        "308",
+        "301",
+        "395",
+        "374",
+        "386",
+        "319",
+        "401",
+        "410",
+        "245",
+        "255",
+        "263",
+        "417",
+        "325",
+        "349"
+      ]
+    },
+    {
+      "stratum": "en|C2|chunk|noimg",
+      "population": 33,
+      "sampled": 4,
+      "ids": [
+        "311",
+        "302",
+        "411",
+        "350"
+      ]
+    },
+    {
+      "stratum": "en|none|nochunk|img",
+      "population": 24,
+      "sampled": 3,
+      "ids": [
+        "286",
+        "320",
+        "436"
+      ]
+    },
+    {
+      "stratum": "en|none|nochunk|noimg",
+      "population": 6,
+      "sampled": 2,
+      "ids": [
+        "280",
+        "418"
+      ]
+    },
+    {
+      "stratum": "zh|C1p|chunk|img",
+      "population": 42,
+      "sampled": 5,
+      "ids": [
+        "197",
+        "200",
+        "177",
+        "229",
+        "214"
+      ]
+    },
+    {
+      "stratum": "zh|C1p|chunk|noimg",
+      "population": 3,
+      "sampled": 1,
+      "ids": [
+        "217"
+      ]
+    },
+    {
+      "stratum": "zh|C1p+C1t|chunk|img",
+      "population": 1,
+      "sampled": 1,
+      "ids": [
+        "216"
+      ]
+    },
+    {
+      "stratum": "zh|C1t|chunk|img",
+      "population": 29,
+      "sampled": 4,
+      "ids": [
+        "195",
+        "164",
+        "226",
+        "86"
+      ]
+    },
+    {
+      "stratum": "zh|C1t|chunk|noimg",
+      "population": 3,
+      "sampled": 1,
+      "ids": [
+        "172"
+      ]
+    },
+    {
+      "stratum": "zh|none|nochunk|img",
+      "population": 77,
+      "sampled": 10,
+      "ids": [
+        "196",
+        "136",
+        "154",
+        "167",
+        "66",
+        "183",
+        "225",
+        "104",
+        "80",
+        "215"
+      ]
+    },
+    {
+      "stratum": "zh|none|nochunk|noimg",
+      "population": 8,
+      "sampled": 1,
+      "ids": [
+        "130"
+      ]
+    }
+  ]
+}

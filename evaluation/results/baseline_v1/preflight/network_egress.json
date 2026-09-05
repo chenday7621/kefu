@@ -1,0 +1,73 @@
+{
+  "alternate_upstream_configured": false,
+  "credential_or_payload_sent": false,
+  "policy": "all configured hosts must pass every TLS attempt",
+  "probes": [
+    {
+      "attempts": [
+        {
+          "addresses": [
+            "28.0.0.46"
+          ],
+          "error": "TimeoutError: TCP connection unavailable",
+          "host": "dashscope.aliyuncs.com",
+          "port": 443,
+          "tcp_status": "not_run",
+          "tls_status": "not_run"
+        },
+        {
+          "addresses": [
+            "28.0.0.46"
+          ],
+          "error": "TimeoutError: TCP connection unavailable",
+          "host": "dashscope.aliyuncs.com",
+          "port": 443,
+          "tcp_status": "not_run",
+          "tls_status": "not_run"
+        },
+        {
+          "addresses": [
+            "28.0.0.46"
+          ],
+          "error": null,
+          "host": "dashscope.aliyuncs.com",
+          "port": 443,
+          "tcp_status": "pass",
+          "tls_status": "pass"
+        },
+        {
+          "addresses": [
+            "28.0.0.46"
+          ],
+          "error": "TimeoutError: TCP connection unavailable",
+          "host": "dashscope.aliyuncs.com",
+          "port": 443,
+          "tcp_status": "not_run",
+          "tls_status": "not_run"
+        },
+        {
+          "addresses": [
+            "28.0.0.46"
+          ],
+          "error": "TimeoutError: TCP connection unavailable",
+          "host": "dashscope.aliyuncs.com",
+          "port": 443,
+          "tcp_status": "not_run",
+          "tls_status": "not_run"
+        }
+      ],
+      "host": "dashscope.aliyuncs.com"
+    }
+  ],
+  "proxy_environment": {
+    "ALL_PROXY": false,
+    "HTTPS_PROXY": false,
+    "HTTP_PROXY": false,
+    "all_proxy": false,
+    "http_proxy": false,
+    "https_proxy": false
+  },
+  "run_at": "2026-09-04T16:37:55+00:00",
+  "schema_version": "network-preflight-v1",
+  "status": "fail"
+}

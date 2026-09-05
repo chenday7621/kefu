@@ -1,0 +1,13 @@
+{
+  "actual_size": 50,
+  "allowed_source_splits": [
+    "train",
+    "dev"
+  ],
+  "calibration_count": 25,
+  "heldout_used": false,
+  "requested_size": 50,
+  "seed": 20260904,
+  "selection": "round-robin strata with manual-diversity preference",
+  "validation_count": 25
+}

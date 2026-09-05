@@ -1,0 +1,13 @@
+{
+  "run": "baseline50",
+  "date": "2026-07-16",
+  "git_commit": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+  "git_tag": "phase1-baseline",
+  "gold_sha256": "d46212986f74630212110c63e6b6a120862b92f87edd1de469eed35c8c7f111c",
+  "temperature_policy": "original (answer layers 0.1, internal rewrite 0.7) — Original Baseline",
+  "router": "unmodified (known empty-return fallback to RAG)",
+  "llm_upstream": "DashScope compatible-mode deepseek-v4-flash via litellm :4000 (aliases qwen3-max/qwen3.6-plus)",
+  "embedding": "qwen3-vl-embedding (1024d, precomputed Milvus)",
+  "rerank": "qwen3-rerank enabled (flag: retrieval_source==rerank)",
+  "sample": "evaluation/results/baseline50/sample_ids.json (stratified, deterministic)"
+}

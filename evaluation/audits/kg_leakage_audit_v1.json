@@ -1,0 +1,18 @@
+{
+  "build_timestamp": "2026-09-04T12:12:53+00:00",
+  "dev_answer_id_overlap": [],
+  "heldout_answer_id_overlap": [],
+  "leakage_status": "pass",
+  "mapped_output_hash": "fda5ebed9688daa07ff95796ccc80d80a07b4584635eca728fc74204f3cc1333",
+  "mapped_records": 1315,
+  "official_baseline_v1_runtime_policy": "KG disabled until the train-only graph path is wired and runtime-audited",
+  "schema_version": "kg-train-only-v1",
+  "semantic_edges": 762,
+  "semantic_output_hash": "6f922fc5e14bcb77e1aec0be9554a99258322405ee00c3821b747734e8d9e228",
+  "source_answer_ids": 243,
+  "source_dataset_hash": "018a03ddbba5a649cddeb8fed677352f958c60853121a2e316d820b079bd8ae2",
+  "source_mapped_hash": "4ca6a8464713b17ff4d7ec3493b265e9141b9f92c8ace75697169faa3c1677ae",
+  "source_semantic_hash": "8f2887d15dee79895c5b93ec4130d762f15b429e01ecb44f5d623961412f07c2",
+  "split_hash": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c",
+  "split_source": "train-only"
+}
