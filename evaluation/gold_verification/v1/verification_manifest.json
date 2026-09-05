@@ -1,0 +1,96 @@
+{
+  "algorithm_optimization_performed": false,
+  "candidate_commit": "ecc33679d0fc993b60cea0abb8566633875b431f",
+  "dataset_name": "InterX-350 Silver Benchmark",
+  "dev_human_gold_status": "PENDING_HUMAN_VERIFICATION",
+  "formal_dev_run_executed": false,
+  "formal_heldout_run_executed": false,
+  "foundation_source_commit": "ecc33679d0fc993b60cea0abb8566633875b431f",
+  "hashes": {
+    "dataset": "331a2764c09660ae02cc115ff4d12787afd758f48c4b399e5cdb80881b2ba91e",
+    "reference_v2": "856e66f423acba8511ea2d188b12c591e5e4e2c0bb10c628cdcacda4183696d9",
+    "source_corpus": "bbbe6a72dcc6e9f841ec5b1d151ee475c33e0418536ea1106363849b7e6cc926",
+    "split": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c"
+  },
+  "heldout_human_gold_status": "PENDING_HUMAN_VERIFICATION",
+  "human_verification_complete": false,
+  "input_hashes": {
+    "dev": "8a941122fcd9cf740fa8c2fe5ed1d9b450b5823bff634789acccd407fe77457a",
+    "heldout": "0981b7cccac6ce5a80f8c1bf0c7b36eb5499619ad08654226899b8964ff7550f"
+  },
+  "policies": {
+    "facts": "source-verbatim conservative machine proposals requiring human approval",
+    "heldout": "separate; do not expose runtime outputs or use future errors for development",
+    "mapping": "manual identity and source-line overlap only",
+    "source": "original manual/source span before any chunk-derived fallback"
+  },
+  "prohibited_review_keys": [
+    "baseline_correctness",
+    "baseline_hit",
+    "retrieval_rank",
+    "retrieval_score",
+    "system_answer"
+  ],
+  "review_record_hashes": {
+    "dev": "920ff399db79a2d559f50ab8853216960c955566f0797c80c9f48b4268646214",
+    "heldout": "14f7146b7def2140aac644baf8a007594869a5b74fbfc3b2fe6cc012d2273b2d"
+  },
+  "schema_hash": "701a10800e5064eac2234d59d3816cdd36d23fafcf1602ee3d7f40196bf7949e",
+  "schema_version": "interx-human-gold-verification-infra-v1",
+  "statistics": {
+    "dev": {
+      "candidate_answer_available": 54,
+      "candidate_facts_generated": 48,
+      "chunk_mapping_resolved": 54,
+      "chunk_mapping_unresolved": 0,
+      "human_gold_status": "PENDING_HUMAN_VERIFICATION",
+      "human_reviewed": 0,
+      "image_applicable": 51,
+      "image_not_applicable": 3,
+      "image_resolved": 51,
+      "records_with_warnings": 33,
+      "source_evidence_fully_resolved": 41,
+      "source_evidence_partially_resolved": 13,
+      "source_evidence_resolved": 54,
+      "source_evidence_unresolved": 0,
+      "total": 54,
+      "warning_count": 93
+    },
+    "heldout": {
+      "candidate_answer_available": 53,
+      "candidate_facts_generated": 37,
+      "chunk_mapping_resolved": 53,
+      "chunk_mapping_unresolved": 0,
+      "human_gold_status": "PENDING_HUMAN_VERIFICATION",
+      "human_reviewed": 0,
+      "image_applicable": 47,
+      "image_not_applicable": 6,
+      "image_resolved": 47,
+      "records_with_warnings": 40,
+      "source_evidence_fully_resolved": 40,
+      "source_evidence_partially_resolved": 13,
+      "source_evidence_resolved": 53,
+      "source_evidence_unresolved": 0,
+      "total": 53,
+      "warning_count": 138
+    }
+  },
+  "system_output_in_review_assets": false,
+  "warning_code_counts": {
+    "dev": {
+      "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT": 6,
+      "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW": 6,
+      "SOURCE_MANUAL_MISSING": 21,
+      "SOURCE_SPAN_AMBIGUOUS": 60
+    },
+    "heldout": {
+      "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT": 16,
+      "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW": 16,
+      "DUPLICATE_QUESTION": 2,
+      "MULTIPLE_MANUALS": 1,
+      "SOURCE_LINES_INVALID": 4,
+      "SOURCE_MANUAL_MISSING": 14,
+      "SOURCE_SPAN_AMBIGUOUS": 85
+    }
+  }
+}

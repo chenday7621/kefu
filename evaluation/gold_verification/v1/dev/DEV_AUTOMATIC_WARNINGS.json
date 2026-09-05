@@ -1,0 +1,550 @@
+{
+  "record_count": 54,
+  "records": [
+    {
+      "id": "70",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E1: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "71",
+      "warnings": [
+        {
+          "code": "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT",
+          "detail": "No candidate-answer claim could be linked conservatively to the extracted source text."
+        },
+        {
+          "code": "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW",
+          "detail": "No source-verbatim fact met the conservative answer-overlap threshold."
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "77",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "81",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E1: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "82",
+      "warnings": [
+        {
+          "code": "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT",
+          "detail": "No candidate-answer claim could be linked conservatively to the extracted source text."
+        },
+        {
+          "code": "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW",
+          "detail": "No source-verbatim fact met the conservative answer-overlap threshold."
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E1: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E4: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "85",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "200",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E4: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E5: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E6: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E7: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E8: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E9: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "201",
+      "warnings": [
+        {
+          "code": "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT",
+          "detail": "No candidate-answer claim could be linked conservatively to the extracted source text."
+        },
+        {
+          "code": "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW",
+          "detail": "No source-verbatim fact met the conservative answer-overlap threshold."
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "202",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E4: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "203",
+      "warnings": [
+        {
+          "code": "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT",
+          "detail": "No candidate-answer claim could be linked conservatively to the extracted source text."
+        },
+        {
+          "code": "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW",
+          "detail": "No source-verbatim fact met the conservative answer-overlap threshold."
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "204",
+      "warnings": [
+        {
+          "code": "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT",
+          "detail": "No candidate-answer claim could be linked conservatively to the extracted source text."
+        },
+        {
+          "code": "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW",
+          "detail": "No source-verbatim fact met the conservative answer-overlap threshold."
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "205",
+      "warnings": [
+        {
+          "code": "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT",
+          "detail": "No candidate-answer claim could be linked conservatively to the extracted source text."
+        },
+        {
+          "code": "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW",
+          "detail": "No source-verbatim fact met the conservative answer-overlap threshold."
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "245",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E6: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "246",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "247",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E5: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E6: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E8: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "248",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E4: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "251",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E11: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E6: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "256",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E3: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E4: source_manual_missing"
+        }
+      ]
+    },
+    {
+      "id": "258",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E1: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E2: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E3: source_manual_missing"
+        }
+      ]
+    },
+    {
+      "id": "259",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E1: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E11: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E13: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E7: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E9: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "260",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E5: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "261",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E1: source_manual_missing"
+        }
+      ]
+    },
+    {
+      "id": "262",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E4: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E5: source_manual_missing"
+        }
+      ]
+    },
+    {
+      "id": "263",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E2: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E5: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E6: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E7: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E9: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "264",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E6: source_span_low_lexical_support"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E8: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "271",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "273",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E3: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E4: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E5: source_manual_missing"
+        }
+      ]
+    },
+    {
+      "id": "274",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E4: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E5: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E3: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "275",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E2: source_manual_missing"
+        }
+      ]
+    },
+    {
+      "id": "276",
+      "warnings": [
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E5: source_span_low_lexical_support"
+        }
+      ]
+    },
+    {
+      "id": "278",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E3: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E4: source_manual_missing"
+        }
+      ]
+    },
+    {
+      "id": "279",
+      "warnings": [
+        {
+          "code": "SOURCE_MANUAL_MISSING",
+          "detail": "E6: source_manual_missing"
+        },
+        {
+          "code": "SOURCE_SPAN_AMBIGUOUS",
+          "detail": "E1: source_span_low_lexical_support"
+        }
+      ]
+    }
+  ],
+  "records_with_warnings": 33,
+  "warning_code_counts": {
+    "CANDIDATE_ANSWER_NO_SOURCE_SUPPORT": 6,
+    "CANDIDATE_REQUIRED_FACTS_NEEDS_HUMAN_REVIEW": 6,
+    "SOURCE_MANUAL_MISSING": 21,
+    "SOURCE_SPAN_AMBIGUOUS": 60
+  },
+  "warning_count": 93
+}

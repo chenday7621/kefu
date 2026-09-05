@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "interx://evaluation/human-gold-review-v1",
+  "title": "InterX Human Gold Verification Review Record V1",
+  "description": "Machine-proposed review material. A record is not Human-Verified Gold until a human decision passes the validator and verified-gold builder.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "split",
+    "language",
+    "question",
+    "candidate_reference_answer",
+    "candidate_required_facts",
+    "candidate_optional_facts",
+    "candidate_forbidden_claims",
+    "candidate_source_evidence",
+    "candidate_gold_images",
+    "candidate_chunk_mapping",
+    "candidate_resolution_status",
+    "automatic_warnings",
+    "source_provenance",
+    "human_review"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "human-gold-verification-review-v1"},
+    "id": {"type": "string", "minLength": 1},
+    "split": {"enum": ["dev", "heldout"]},
+    "language": {"enum": ["zh", "en"]},
+    "question": {"type": "string", "minLength": 1},
+    "candidate_reference_answer": {"type": "string"},
+    "candidate_required_facts": {"type": "array", "items": {"$ref": "#/$defs/fact"}},
+    "candidate_optional_facts": {"type": "array"},
+    "candidate_forbidden_claims": {"type": "array"},
+    "candidate_source_evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "candidate_gold_images": {"type": "array", "items": {"$ref": "#/$defs/image"}},
+    "candidate_chunk_mapping": {"$ref": "#/$defs/chunk_mapping"},
+    "candidate_resolution_status": {"enum": ["PROPOSED_RESOLVED", "PROPOSED_PARTIAL", "NEEDS_HUMAN_REVIEW", "SOURCE_EVIDENCE_UNRESOLVED"]},
+    "automatic_warnings": {"type": "array", "items": {"$ref": "#/$defs/warning"}},
+    "source_provenance": {"type": "object"},
+    "human_review": {"$ref": "#/$defs/human_review"}
+  },
+  "$defs": {
+    "nullable_string": {"type": ["string", "null"]},
+    "fact": {
+      "type": "object",
+      "required": ["fact_id", "text", "source_evidence_ids", "support_method", "support_score", "machine_proposed"],
+      "properties": {
+        "fact_id": {"type": "string"},
+        "text": {"type": "string"},
+        "source_evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "support_method": {"const": "source_verbatim_with_candidate_answer_lexical_overlap"},
+        "support_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "machine_proposed": {"const": true}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["evidence_id", "manual_id", "manual_title", "section_path", "source_location", "source_lines", "evidence_text", "resolution_status", "resolution_method", "machine_proposed"],
+      "properties": {
+        "evidence_id": {"type": "string"},
+        "manual_id": {"$ref": "#/$defs/nullable_string"},
+        "manual_title": {"$ref": "#/$defs/nullable_string"},
+        "section_path": {"type": "array", "items": {"type": "string"}},
+        "source_location": {"$ref": "#/$defs/nullable_string"},
+        "source_lines": {"type": "array", "items": {"type": "object", "required": ["start", "end"]}},
+        "evidence_text": {"$ref": "#/$defs/nullable_string"},
+        "resolution_status": {"enum": ["PROPOSED_SOURCE_SPAN_RESOLVED", "UNRESOLVED"]},
+        "resolution_method": {"type": "string"},
+        "unresolved_reason": {"$ref": "#/$defs/nullable_string"},
+        "candidate_annotation": {"$ref": "#/$defs/nullable_string"},
+        "candidate_answer_lexical_support": {"type": "number"},
+        "automatic_warnings": {"type": "array", "items": {"type": "string"}},
+        "machine_proposed": {"const": true}
+      }
+    },
+    "image": {
+      "type": "object",
+      "required": ["image_id", "source_path", "resolution_status", "machine_proposed"],
+      "properties": {
+        "image_id": {"type": "string"},
+        "source_path": {"$ref": "#/$defs/nullable_string"},
+        "resolution_status": {"enum": ["PROPOSED_RESOLVED", "UNRESOLVED"]},
+        "machine_proposed": {"const": true}
+      }
+    },
+    "chunk_mapping": {
+      "type": "object",
+      "required": ["acceptable_small_chunk_ids", "acceptable_mid_chunk_ids", "acceptable_big_chunk_ids", "evidence_groups", "mapping_status", "mapping_method", "chunk_corpus_hash", "machine_proposed"],
+      "properties": {
+        "acceptable_small_chunk_ids": {"type": "array", "items": {"type": "string"}},
+        "acceptable_mid_chunk_ids": {"type": "array", "items": {"type": "string"}},
+        "acceptable_big_chunk_ids": {"type": "array", "items": {"type": "string"}},
+        "evidence_groups": {"type": "array"},
+        "mapping_status": {"enum": ["PROPOSED_RESOLVED", "PROPOSED_PARTIAL", "CHUNK_MAPPING_UNRESOLVED"]},
+        "mapping_method": {"const": "manual_identity_and_source_line_overlap"},
+        "chunk_corpus_hash": {"type": "string"},
+        "machine_proposed": {"const": true}
+      }
+    },
+    "warning": {
+      "type": "object",
+      "required": ["code", "detail"],
+      "properties": {"code": {"type": "string"}, "detail": {"type": "string"}}
+    },
+    "human_review": {
+      "type": "object",
+      "required": ["review_status", "overall_decision"],
+      "properties": {
+        "review_status": {"enum": ["UNREVIEWED", "IN_PROGRESS", "COMPLETED"]},
+        "question_valid": {"type": ["boolean", "null"]},
+        "reference_answer_status": {"type": ["string", "null"]},
+        "reference_answer_final": {"$ref": "#/$defs/nullable_string"},
+        "required_facts_status": {"type": ["string", "null"]},
+        "required_facts_final": {"type": ["array", "null"]},
+        "source_evidence_status": {"type": ["string", "null"]},
+        "source_evidence_final": {"type": ["array", "null"]},
+        "source_evidence_unresolved_reason": {"$ref": "#/$defs/nullable_string"},
+        "image_status": {"type": ["string", "null"]},
+        "image_final": {"type": ["array", "null"]},
+        "chunk_mapping_status": {"type": ["string", "null"]},
+        "chunk_mapping_final": {"type": ["object", "null"]},
+        "overall_decision": {"type": ["string", "null"], "enum": [null, "APPROVE", "EDITED_APPROVE", "QUARANTINE", "NEEDS_SECOND_REVIEW"]},
+        "quarantine_reason": {"$ref": "#/$defs/nullable_string"},
+        "reviewer_notes": {"$ref": "#/$defs/nullable_string"},
+        "reviewer_id": {"$ref": "#/$defs/nullable_string"},
+        "reviewed_at": {"$ref": "#/$defs/nullable_string"}
+      }
+    }
+  }
+}
