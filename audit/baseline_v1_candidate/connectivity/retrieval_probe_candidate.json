@@ -1,0 +1,57 @@
+{
+  "big_hits": 3,
+  "error": null,
+  "mid_hits": 5,
+  "query": "空调制冷效果差怎么办",
+  "retrieval_meta": {
+    "bm25_top_k": 20,
+    "cache_status": {
+      "bm25": "miss",
+      "corpus": "miss"
+    },
+    "call_counts": {
+      "bm25": 1,
+      "dense": 1,
+      "embedding": 1,
+      "rerank": 1
+    },
+    "channels_used": [
+      "dense",
+      "bm25"
+    ],
+    "dense_enabled": true,
+    "dense_error": null,
+    "dense_top_k": 20,
+    "elapsed_seconds": 71.229,
+    "fallbacks": [],
+    "hybrid_top_k": 10,
+    "model_names": {
+      "embedding": "qwen3-vl-embedding",
+      "rerank": "qwen3-rerank"
+    },
+    "query": "空调制冷效果差怎么办",
+    "rerank_enabled": true,
+    "retry_count": 1,
+    "stage_status": {
+      "bm25": "ok",
+      "dense": "ok",
+      "embedding": "ok",
+      "fusion": "ok",
+      "rerank": "ok"
+    },
+    "stage_timings_ms": {
+      "bm25": 81.967,
+      "dense": 517.998,
+      "embedding": 61294.162,
+      "fusion": 0.12,
+      "rerank": 287.569
+    },
+    "timeout_count": 1
+  },
+  "run_at": "2026-09-05T08:42:42+00:00",
+  "schema_version": "retrieval-preflight-v1",
+  "small_hits": 5,
+  "status": "pass",
+  "top_chunk_id": "manual_615a6eb14309_small_0002_0000_0000",
+  "wall_ms": 71232.79
+}

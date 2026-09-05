@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 from pymilvus import MilvusClient
 
 from .config import APIConfig, EmbeddingConfig, VectorStoreConfig
+from . import observability as obs
 
 
 def _load_api_env(config: APIConfig) -> tuple[str, str]:
@@ -88,11 +89,15 @@ def _request_embedding(
     response = None
     last_error: Exception | None = None
     for attempt in range(max(1, config.max_retries + 1)):
+        if attempt:
+            obs.record_retry()
         try:
             response = requests.post(endpoint, headers=headers, json=body, timeout=config.timeout_seconds)
             if response.status_code not in {408, 409, 429, 500, 502, 503, 504}:
                 break
         except requests.RequestException as exc:
+            if isinstance(exc, requests.Timeout):
+                obs.record_timeout()
             last_error = exc
         if attempt < config.max_retries:
             time.sleep(config.retry_backoff_seconds * (2**attempt))

@@ -1,0 +1,49 @@
+{
+  "config": "answer/configs/baseline_v1.yaml",
+  "credential_recorded": false,
+  "provider_mode": "direct",
+  "roles": {
+    "answer": {
+      "error": null,
+      "host": "dashscope.aliyuncs.com",
+      "latency_ms": 1907.76,
+      "model": "deepseek-v4-flash",
+      "response_nonempty": true,
+      "status": "pass",
+      "token_usage": {
+        "input_tokens": 9,
+        "output_tokens": 32,
+        "total_tokens": 41
+      }
+    },
+    "judge": {
+      "error": null,
+      "host": "dashscope.aliyuncs.com",
+      "latency_ms": 1299.342,
+      "model": "deepseek-v4-flash",
+      "response_nonempty": true,
+      "status": "pass",
+      "token_usage": {
+        "input_tokens": 9,
+        "output_tokens": 22,
+        "total_tokens": 31
+      }
+    },
+    "rewrite": {
+      "error": "APITimeoutError: provider request unavailable or timed out",
+      "host": "dashscope.aliyuncs.com",
+      "latency_ms": 25209.406,
+      "model": "deepseek-v4-flash",
+      "response_nonempty": false,
+      "status": "fail",
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "total_tokens": null
+      }
+    }
+  },
+  "run_at": "2026-09-05T08:42:07+00:00",
+  "schema_version": "direct-provider-preflight-v1",
+  "status": "fail"
+}

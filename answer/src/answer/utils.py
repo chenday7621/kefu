@@ -19,7 +19,7 @@ def load_env(env_file: Path) -> None:
 
 
 def get_openai_client(env_file: Path, api_key_env: str, base_url_env: str) -> OpenAI:
-    """Create a gateway-backed OpenAI-compatible client for answer-time LLM calls."""
+    """Create an OpenAI-compatible client for a direct provider or optional gateway."""
     load_env(env_file)
     api_key = os.getenv(api_key_env, "").strip()
     base_url = os.getenv(base_url_env, "").strip()

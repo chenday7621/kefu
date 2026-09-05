@@ -1,0 +1,181 @@
+{
+  "counts": {
+    "total_run": 350,
+    "ok": 350,
+    "errors": 0,
+    "routed_general": 0,
+    "chunk_eligible": 235,
+    "imgchunk_eligible": 296,
+    "doc_eligible": 328
+  },
+  "retrieval_chunk_gold": {
+    "hit@1": {
+      "mean": 0.6213,
+      "n": 235
+    },
+    "hit@3": {
+      "mean": 0.7702,
+      "n": 235
+    },
+    "hit@5": {
+      "mean": 0.8383,
+      "n": 235
+    },
+    "recall@1": {
+      "mean": 0.0905,
+      "n": 235
+    },
+    "recall@3": {
+      "mean": 0.1803,
+      "n": 235
+    },
+    "recall@5": {
+      "mean": 0.2591,
+      "n": 235
+    },
+    "mrr": {
+      "mean": 0.7139,
+      "n": 235
+    }
+  },
+  "retrieval_image_chunks": {
+    "imgchunk_hit@1": {
+      "mean": 0.0676,
+      "n": 296
+    },
+    "imgchunk_hit@3": {
+      "mean": 0.2736,
+      "n": 296
+    },
+    "imgchunk_hit@5": {
+      "mean": 0.4122,
+      "n": 296
+    },
+    "imgchunk_recall@1": {
+      "mean": 0.0481,
+      "n": 296
+    },
+    "imgchunk_recall@3": {
+      "mean": 0.2099,
+      "n": 296
+    },
+    "imgchunk_recall@5": {
+      "mean": 0.3256,
+      "n": 296
+    },
+    "imgchunk_mrr": {
+      "mean": 0.211,
+      "n": 296
+    }
+  },
+  "doc_routing": {
+    "doc_hit@1": {
+      "mean": 0.8994,
+      "n": 328
+    },
+    "doc_hit@5": {
+      "mean": 0.9817,
+      "n": 328
+    }
+  },
+  "answers": {
+    "image_recall": {
+      "mean": 0.479,
+      "n": 296
+    },
+    "image_precision": {
+      "mean": 0.5697,
+      "n": 263
+    },
+    "image_exact_match": {
+      "mean": 0.277,
+      "n": 296
+    },
+    "pic_placeholder_consistent": {
+      "mean": 1.0,
+      "n": 350
+    },
+    "answer_len": {
+      "mean": 560.1171,
+      "n": 350
+    }
+  },
+  "per_lang": {
+    "zh": {
+      "hit@1": {
+        "mean": 0.3077,
+        "n": 78
+      },
+      "hit@3": {
+        "mean": 0.5,
+        "n": 78
+      },
+      "hit@5": {
+        "mean": 0.6538,
+        "n": 78
+      },
+      "recall@1": {
+        "mean": 0.1754,
+        "n": 78
+      },
+      "recall@3": {
+        "mean": 0.3397,
+        "n": 78
+      },
+      "recall@5": {
+        "mean": 0.5124,
+        "n": 78
+      },
+      "mrr": {
+        "mean": 0.4494,
+        "n": 78
+      }
+    },
+    "en": {
+      "hit@1": {
+        "mean": 0.7771,
+        "n": 157
+      },
+      "hit@3": {
+        "mean": 0.9045,
+        "n": 157
+      },
+      "hit@5": {
+        "mean": 0.9299,
+        "n": 157
+      },
+      "recall@1": {
+        "mean": 0.0483,
+        "n": 157
+      },
+      "recall@3": {
+        "mean": 0.1011,
+        "n": 157
+      },
+      "recall@5": {
+        "mean": 0.1333,
+        "n": 157
+      },
+      "mrr": {
+        "mean": 0.8453,
+        "n": 157
+      }
+    }
+  },
+  "runtime": {
+    "mean_s": 65.4,
+    "p50_s": 43.0,
+    "p95_s": 113.8
+  },
+  "router": {
+    "calls": 350,
+    "failed": 242,
+    "empty_return": 242,
+    "failed_but_fallback_rag_ok": 242,
+    "genuine_rag_route": 108,
+    "routed_general": 0,
+    "elapsed_mean_s": 1.5,
+    "elapsed_p50_s": 1.46,
+    "elapsed_p95_s": 2.23
+  }
+}

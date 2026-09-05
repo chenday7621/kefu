@@ -1,0 +1,146 @@
+{
+  "connected_manual_groups": {
+    "dev": [
+      "Yamaha 210FSH 2021",
+      "功能键盘手册",
+      "空调手册"
+    ],
+    "heldout": [
+      "Color E-Reader",
+      "Yamaha WaveRunner 2005",
+      "发电机手册|水泵手册"
+    ],
+    "train": [
+      "Bosch Microwave",
+      "Brother Safety Guide",
+      "Canon EOS 20D",
+      "Color Television",
+      "Hydrabuds ANC",
+      "Instant Pot Duo Crisp",
+      "MV Camera",
+      "Motherboard",
+      "Nespresso CitiZ D111",
+      "Outdoor Grill",
+      "Philips Airfryer",
+      "Philips Sonicare Prestige",
+      "Philips XL490 XL495",
+      "Roomba i5",
+      "Toro Z Master 4000",
+      "VR头显手册",
+      "Yamaha Snowmobile",
+      "人体工学椅手册",
+      "健身单车手册",
+      "健身追踪器手册",
+      "儿童电动摩托车手册",
+      "冰箱手册",
+      "可编程温控器手册",
+      "吹风机手册",
+      "摩托艇手册",
+      "洗碗机手册",
+      "烤箱手册",
+      "电钻手册",
+      "相机手册",
+      "空气净化器手册",
+      "蒸汽清洁机手册",
+      "蓝牙激光鼠标手册"
+    ]
+  },
+  "counts": {
+    "dev": {
+      "chunk": 36,
+      "count": 54,
+      "doc": 50,
+      "en": 32,
+      "image": 51,
+      "zh": 22
+    },
+    "heldout": {
+      "chunk": 35,
+      "count": 53,
+      "doc": 49,
+      "en": 28,
+      "image": 47,
+      "zh": 25
+    },
+    "train": {
+      "chunk": 164,
+      "count": 243,
+      "doc": 229,
+      "en": 127,
+      "image": 198,
+      "zh": 116
+    }
+  },
+  "dataset_hash": "331a2764c09660ae02cc115ff4d12787afd758f48c4b399e5cdb80881b2ba91e",
+  "dataset_name": "InterX-350 Silver Benchmark",
+  "grouping_policy": "All records sharing the resolved manual group remain in one split.",
+  "id_hashes": {
+    "dev": "738120362fd84ee4059a1e7ae29f8a874994a00dbc8a2c971ec7670567085496",
+    "heldout": "60d82d9514f67a288f4238d2ac98c2a2387d076c4cf2304c05dd27f871ba13d2",
+    "quarantined": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "train": "3f5daf183f3afa8470bbe05e8f86e45ab9e2686094bc923aaa17402e7968d14a"
+  },
+  "manual_group_overlap": {
+    "dev_heldout": [],
+    "train_dev": [],
+    "train_heldout": []
+  },
+  "manual_groups": {
+    "dev": [
+      "Yamaha 210FSH 2021",
+      "功能键盘手册",
+      "空调手册"
+    ],
+    "heldout": [
+      "Color E-Reader",
+      "Yamaha WaveRunner 2005",
+      "发电机手册",
+      "水泵手册"
+    ],
+    "train": [
+      "Bosch Microwave",
+      "Brother Safety Guide",
+      "Canon EOS 20D",
+      "Color Television",
+      "Hydrabuds ANC",
+      "Instant Pot Duo Crisp",
+      "MV Camera",
+      "Motherboard",
+      "Nespresso CitiZ D111",
+      "Outdoor Grill",
+      "Philips Airfryer",
+      "Philips Sonicare Prestige",
+      "Philips XL490 XL495",
+      "Roomba i5",
+      "Toro Z Master 4000",
+      "VR头显手册",
+      "Yamaha Snowmobile",
+      "人体工学椅手册",
+      "健身单车手册",
+      "健身追踪器手册",
+      "儿童电动摩托车手册",
+      "冰箱手册",
+      "可编程温控器手册",
+      "吹风机手册",
+      "摩托艇手册",
+      "洗碗机手册",
+      "烤箱手册",
+      "电钻手册",
+      "相机手册",
+      "空气净化器手册",
+      "蒸汽清洁机手册",
+      "蓝牙激光鼠标手册"
+    ]
+  },
+  "quarantined_count": 0,
+  "question_type": "not used; governance marks it unavailable rather than inferring labels",
+  "ratios": {
+    "dev": 0.15,
+    "heldout": 0.15,
+    "train": 0.7
+  },
+  "schema_version": "split-manifest-v1",
+  "seed": 20260904,
+  "split_hash": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c",
+  "strategy": "manual-grouped deterministic stratification over language and chunk/doc/image coverage"
+}

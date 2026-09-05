@@ -1,0 +1,17 @@
+nohup: ignoring input
+=== [2026-07-17 16:13:00] pre-flight gateway probe ===
+GATEWAY PROBE OK: alias=qwen3.6-plus content='ok'
+=== [2026-07-17 16:13:09] run baseline (resume-safe) ===
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.971 seconds.
+Prefix dict has been built successfully.
+total=350 done=349 pending_this_run=1 workers=3
+concurrency guards: kg_serialized=True, retrieval_reload=load-once
+[1/1] id=193 ok 119.805s
+finished: 1 run, 0 errors -> /home/chenyi/projects/InterX/evaluation/results/baseline350/raw.jsonl
+=== [2026-07-17 16:15:12] compute metrics ===
+=== [2026-07-17 16:15:13] generate report + audit lists ===
+report -> /home/chenyi/projects/InterX/evaluation/BASELINE_350_REPORT.md
+audit lists -> /home/chenyi/projects/InterX/evaluation/audits/BASELINE_350_pending_audits.md
+=== [2026-07-17 16:15:13] PIPELINE DONE ===

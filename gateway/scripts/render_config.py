@@ -14,6 +14,12 @@ replacements = {
     'os.environ/UPSTREAM_1_TPM': os.getenv('UPSTREAM_1_TPM', ''),
     'os.environ/LITELLM_MASTER_KEY': os.getenv('LITELLM_MASTER_KEY', ''),
 }
+missing = [old.split('/')[-1] for old, new in replacements.items() if not str(new).strip()]
+if missing:
+    raise SystemExit(
+        f"refusing to render: env vars not set: {', '.join(missing)} "
+        f"(source gateway/.env first: set -a && . ./.env && set +a)"
+    )
 text = template
 for old, new in replacements.items():
     text = text.replace(old, str(new))

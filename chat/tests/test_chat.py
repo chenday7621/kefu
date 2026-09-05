@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from chat.models import Turn, Session, ChatResponse
-from chat.store import save_session, load_session, list_sessions
+from chat.store import save_session, load_session, list_sessions, _session_path
 from chat.memory import get_context_for_query, _format_turns_text
 from chat.config import ChatSettings, MemoryConfig
 
@@ -85,6 +85,14 @@ def test_list_sessions():
             save_session(Session.create(sid), session_dir)
         sessions = list_sessions(session_dir)
         assert sessions == ["s1", "s2", "s3"]
+
+
+def test_session_path_rejects_traversal(tmp_path):
+    import pytest
+    with pytest.raises(ValueError):
+        _session_path(tmp_path, "../../escape", "default")
+    with pytest.raises(ValueError):
+        _session_path(tmp_path, "safe", "../escape")
 
 
 # ---------------------------------------------------------------------------

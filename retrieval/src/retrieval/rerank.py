@@ -9,6 +9,7 @@ import requests
 from dotenv import load_dotenv
 
 from .config import RetrievalSettings, RerankConfig
+from . import observability as obs
 from .types import SearchHit
 
 
@@ -52,11 +53,15 @@ class Reranker:
         response = None
         last_error: Exception | None = None
         for attempt in range(max(1, self._config.max_retries + 1)):
+            if attempt:
+                obs.record_retry()
             try:
                 response = requests.post(endpoint, headers=headers, json=body, timeout=self._config.timeout_seconds)
                 if response.status_code not in {408, 409, 429, 500, 502, 503, 504}:
                     break
             except requests.RequestException as exc:
+                if isinstance(exc, requests.Timeout):
+                    obs.record_timeout()
                 last_error = exc
             if attempt < self._config.max_retries:
                 time.sleep(2**attempt)

@@ -1,0 +1,72 @@
+name: baseline-v1
+dataset: InterX-350 Silver Benchmark
+split_version: v1
+seed: 20260904
+
+execution:
+  query_workers: 1
+  concurrency: 1
+  warmup_ids: [241]
+  warmup_measurement: discarded
+  cache_policy: process_local_warm_cache_after_one_warmup
+  retrieval_reload_policy: startup_once
+  outlier_threshold_seconds: 300
+  outlier_policy: retain_and_report_separately
+
+answer:
+  config: answer/configs/baseline_v1.yaml
+  provider_mode: direct
+  provider: DashScope OpenAI-compatible API
+  model_name: deepseek-v4-flash
+  rewrite_model_name: deepseek-v4-flash
+  judge_model_name: deepseek-v4-flash
+  temperature: 0.1
+  top_p: provider_default
+  router_max_tokens: 32
+  small_max_tokens: 2048
+  mid_max_tokens: 3072
+  big_max_tokens: 3072
+  ensemble_max_tokens: 4096
+  timeout_seconds: 90
+  retry_policy: existing_layer_policy
+
+retrieval:
+  config: retrieval/configs/default.yaml
+  embedding_model: qwen3-vl-embedding
+  reranker_model: qwen3-rerank
+  dense_top_k: 20
+  bm25_top_k: 20
+  hybrid_top_k: 10
+  rerank_candidate_k: 20
+  rrf_k: 60
+  dense_weight: 0.65
+  bm25_weight: 0.35
+
+provider:
+  credentials_file: gateway/.env
+  api_key_env: UPSTREAM_1_API_KEY
+  base_url_env: UPSTREAM_1_BASE_URL
+  expected_host: dashscope.aliyuncs.com
+  litellm_required: false
+
+optional_components:
+  litellm:
+    enabled: false
+    answer_config: answer/configs/baseline_v1_litellm_optional.yaml
+
+kg:
+  enabled: false
+  reason: legacy graph contains all-350 QA leakage; train-only inputs are audited but runtime graph integration is not yet certified
+  permitted_source_if_enabled_in_future: train-only
+
+features:
+  query_rewrite_enabled_metadata_only: true
+  query_rewrite_used_for_retrieval: false
+  decomposition_enabled: false
+  vlm_enabled: false
+
+artifacts:
+  corpus_dir: process/artifacts/manuals
+  vector_db: process/artifacts/manual_chunks.db
+  gold_v2: evaluation/gold_v2/references.jsonl
+  splits: evaluation/splits/v1

@@ -2,7 +2,12 @@ __pycache__/
 *.pyc
 *.pyo
 .venv/
+.venv*/
 .env
+*.pem
+*.key
+*.p12
+*.pfx
 .pytest_cache/
 *.egg-info/
 .vscode/
@@ -16,6 +21,7 @@ chat/sessions/
 gateway/logs/
 gateway/state/
 gateway/tests/results/
+audit/DOWNLOAD_FOR_CHATGPT/
 
 # Skill logs
 .agents/**/logs/

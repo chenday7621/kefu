@@ -1,0 +1,198 @@
+nohup: ignoring input
+=== [2026-07-17 14:17:49] pre-flight gateway probe ===
+GATEWAY PROBE OK: alias=qwen3.6-plus content='ok'
+=== [2026-07-17 14:18:07] run baseline (resume-safe) ===
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.730 seconds.
+Prefix dict has been built successfully.
+Failed to start MilvusLite server for /home/chenyi/projects/InterX/process/artifacts/manual_chunks.db
+Traceback (most recent call last):
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/db.py", line 412, in _acquire_lock
+    fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/server_manager.py", line 61, in start_and_get_uri
+    server, db, port = start_server_in_thread(
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/adapter/grpc/server.py", line 93, in start_server_in_thread
+    db = MilvusLite(data_dir)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/db.py", line 81, in __init__
+    self._acquire_lock()
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/db.py", line 415, in _acquire_lock
+    raise DataDirLockedError(
+milvus_lite.exceptions.DataDirLockedError: another process holds the lock on '/home/chenyi/projects/InterX/process/artifacts/manual_chunks.db': [Errno 11] Resource temporarily unavailable
+Failed to start MilvusLite server for /home/chenyi/projects/InterX/process/artifacts/manual_chunks.db
+Traceback (most recent call last):
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/db.py", line 412, in _acquire_lock
+    fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/server_manager.py", line 61, in start_and_get_uri
+    server, db, port = start_server_in_thread(
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/adapter/grpc/server.py", line 93, in start_server_in_thread
+    db = MilvusLite(data_dir)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/db.py", line 81, in __init__
+    self._acquire_lock()
+  File "/home/chenyi/projects/InterX/chat/.venv/lib/python3.12/site-packages/milvus_lite/db.py", line 415, in _acquire_lock
+    raise DataDirLockedError(
+milvus_lite.exceptions.DataDirLockedError: another process holds the lock on '/home/chenyi/projects/InterX/process/artifacts/manual_chunks.db': [Errno 11] Resource temporarily unavailable
+total=350 done=218 pending_this_run=132 workers=3
+concurrency guards: kg_serialized=True, retrieval_reload=load-once
+[1/132] id=274 ok 53.935s
+[2/132] id=273 ok 62.867s
+[3/132] id=277 ok 35.408s
+[4/132] id=275 ok 113.846s
+[5/132] id=278 ok 53.69s
+[6/132] id=279 ok 46.777s
+[7/132] id=281 ok 21.554s
+[8/132] id=276 ok 160.571s
+[9/132] id=282 ok 57.627s
+[10/132] id=285 ok 25.207s
+[11/132] id=284 ok 49.235s
+[12/132] id=287 ok 28.558s
+[13/132] id=283 ok 102.627s
+[14/132] id=288 ok 35.218s
+[15/132] id=289 ok 30.757s
+[16/132] id=291 ok 34.745s
+[17/132] id=294 ok 35.942s
+[18/132] id=293 ok 48.546s
+[19/132] id=296 ok 23.93s
+[20/132] id=292 ok 104.077s
+[21/132] id=297 ok 58.343s
+[22/132] id=295 ok 103.587s
+[23/132] id=299 ok 29.532s
+[24/132] id=300 ok 31.332s
+[25/132] id=298 ok 98.53s
+[26/132] id=303 ok 41.017s
+[27/132] id=304 ok 26.513s
+[28/132] id=306 ok 38.002s
+[29/132] id=307 ok 36.823s
+[30/132] id=310 ok 48.091s
+[31/132] id=305 ok 92.061s
+[32/132] id=312 ok 26.475s
+[33/132] id=309 ok 80.445s
+[34/132] id=313 ok 30.508s
+[35/132] id=316 ok 15.724s
+[36/132] id=315 ok 30.457s
+[37/132] id=317 ok 49.59s
+[38/132] id=318 ok 39.942s
+[39/132] id=322 ok 25.356s
+[40/132] id=324 ok 53.264s
+[41/132] id=321 ok 113.571s
+[42/132] id=323 ok 94.614s
+[43/132] id=328 ok 32.248s
+[44/132] id=327 ok 66.734s
+[45/132] id=329 ok 34.067s
+[46/132] id=326 ok 92.066s
+[47/132] id=330 ok 25.937s
+[48/132] id=332 ok 43.31s
+[49/132] id=333 ok 43.877s
+[50/132] id=331 ok 66.444s
+[51/132] id=334 ok 47.739s
+[52/132] id=345 ok 55.727s
+[53/132] id=346 ok 54.088s
+[54/132] id=347 ok 33.148s
+[55/132] id=344 ok 112.588s
+[56/132] id=351 ok 34.722s
+[57/132] id=352 ok 20.569s
+[58/132] id=348 ok 46.671s
+[59/132] id=354 ok 36.755s
+[60/132] id=355 ok 41.552s
+[61/132] id=353 ok 57.05s
+[62/132] id=357 ok 29.465s
+[63/132] id=358 ok 36.141s
+[64/132] id=359 ok 43.164s
+[65/132] id=356 ok 98.68s
+[66/132] id=361 ok 33.378s
+[67/132] id=362 ok 16.314s
+[68/132] id=360 ok 94.03s
+[69/132] id=364 ok 48.45s
+[70/132] id=363 ok 54.65s
+[71/132] id=365 ok 47.541s
+[72/132] id=367 ok 35.903s
+[73/132] id=368 ok 46.681s
+[74/132] id=369 ok 30.085s
+[75/132] id=370 ok 51.805s
+[76/132] id=371 ok 69.698s
+[77/132] id=372 ok 71.599s
+[78/132] id=373 ok 48.148s
+[79/132] id=376 ok 20.877s
+[80/132] id=375 ok 35.173s
+[81/132] id=377 ok 31.205s
+[82/132] id=379 ok 40.71s
+[83/132] id=381 ok 20.006s
+[84/132] id=380 ok 61.871s
+[85/132] id=378 ok 94.55s
+[86/132] id=383 ok 28.962s
+[87/132] id=382 ok 65.048s
+[88/132] id=384 ok 36.438s
+[89/132] id=385 ok 32.105s
+[90/132] id=388 ok 33.726s
+[91/132] id=387 ok 44.464s
+[92/132] id=390 ok 32.665s
+[93/132] id=389 ok 67.838s
+[94/132] id=391 ok 40.921s
+[95/132] id=392 ok 28.328s
+[96/132] id=394 ok 18.732s
+[97/132] id=393 ok 47.18s
+[98/132] id=396 ok 31.19s
+[99/132] id=397 ok 43.025s
+[100/132] id=400 ok 36.908s
+[101/132] id=398 ok 64.255s
+KG db not found for manual Twin_Tub_Washing_Machine_a93380206cd3
+[102/132] id=402 ok 30.698s
+[103/132] id=403 ok 28.843s
+KG db not found for manual Twin_Tub_Washing_Machine_a93380206cd3
+[104/132] id=399 ok 105.67s
+[105/132] id=405 ok 27.43s
+[106/132] id=406 ok 30.749s
+[107/132] id=404 ok 52.957s
+KG db not found for manual Twin_Tub_Washing_Machine_a93380206cd3
+[108/132] id=407 ok 33.948s
+[109/132] id=408 ok 17.398s
+KG db not found for manual Twin_Tub_Washing_Machine_a93380206cd3
+[110/132] id=409 ok 26.944s
+[111/132] id=412 ok 22.359s
+[112/132] id=413 ok 42.357s
+[113/132] id=415 ok 43.04s
+[114/132] id=414 ok 59.906s
+[115/132] id=419 ok 37.242s
+[116/132] id=420 ok 37.721s
+[117/132] id=422 ok 30.78s
+[118/132] id=421 ok 43.786s
+[119/132] id=423 ok 25.218s
+[120/132] id=424 ok 35.487s
+[121/132] id=426 ok 26.545s
+[122/132] id=425 ok 37.939s
+[123/132] id=416 ok 170.69s
+[124/132] id=428 ok 41.881s
+[125/132] id=427 ok 44.621s
+[126/132] id=429 ok 59.373s
+[127/132] id=431 ok 37.467s
+[128/132] id=430 ok 39.887s
+KG db not found for manual Twin_Tub_Washing_Machine_a93380206cd3
+[129/132] id=432 ok 38.918s
+[130/132] id=433 ok 37.614s
+[131/132] id=434 ok 42.288s
+[132/132] id=435 ok 38.157s
+finished: 132 run, 0 errors -> /home/chenyi/projects/InterX/evaluation/results/baseline350/raw.jsonl
+=== [2026-07-17 14:54:02] compute metrics ===
+=== [2026-07-17 14:54:02] generate report + audit lists ===
+Traceback (most recent call last):
+  File "/home/chenyi/projects/InterX/evaluation/scripts/make_350_report.py", line 193, in <module>
+    main()
+  File "/home/chenyi/projects/InterX/evaluation/scripts/make_350_report.py", line 46, in main
+    c = metrics["counts"]
+        ~~~~~~~^^^^^^^^^^
+KeyError: 'counts'
+=== [2026-07-17 14:54:03] PIPELINE DONE ===

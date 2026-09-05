@@ -8,7 +8,7 @@ import requests
 import streamlit as st
 
 API_BASE = os.getenv("INTERX_CHAT_API_BASE", "http://127.0.0.1:8000")
-API_TOKEN = os.getenv("INTERX_CHAT_API_TOKEN", "sk_local_dev")
+API_TOKEN = os.getenv("INTERX_CHAT_API_TOKEN", "")
 
 st.set_page_config(page_title="InterX 智能客服", page_icon="🤖", layout="wide")
 
@@ -22,6 +22,8 @@ if "messages" not in st.session_state:
 
 def _api_headers() -> dict[str, str]:
     """Build API headers once so UI calls stay consistent."""
+    if not API_TOKEN:
+        raise RuntimeError("INTERX_CHAT_API_TOKEN is required")
     return {"Authorization": f"Bearer {API_TOKEN}"}
 
 

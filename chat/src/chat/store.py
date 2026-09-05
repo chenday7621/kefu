@@ -2,19 +2,40 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from .models import Session, Turn
 
 
+_SAFE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$")
+
+
+def validate_storage_id(value: str, *, field_name: str) -> str:
+    """Reject separators, traversal tokens and ambiguous storage identifiers."""
+    if not _SAFE_ID_RE.fullmatch(value or "") or value in {".", ".."}:
+        raise ValueError(f"invalid {field_name}")
+    return value
+
+
+def _contained(root: Path, candidate: Path) -> Path:
+    root_resolved = root.resolve()
+    resolved = candidate.resolve(strict=False)
+    if not resolved.is_relative_to(root_resolved):
+        raise ValueError("session path escapes session root")
+    return resolved
+
+
 def _user_dir(session_dir: Path, user_id: str) -> Path:
     """Return the per-user directory used for session isolation."""
-    return session_dir / user_id
+    uid = validate_storage_id(user_id, field_name="user_id")
+    return _contained(session_dir, session_dir / uid)
 
 
 def _session_path(session_dir: Path, session_id: str, user_id: str = "default") -> Path:
     """Return the on-disk JSON path for one session."""
-    return _user_dir(session_dir, user_id) / f"{session_id}.json"
+    sid = validate_storage_id(session_id, field_name="session_id")
+    return _contained(session_dir, _user_dir(session_dir, user_id) / f"{sid}.json")
 
 
 def save_session(session: Session, session_dir: Path, *, user_id: str = "default") -> None:

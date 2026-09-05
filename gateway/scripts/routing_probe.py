@@ -11,7 +11,7 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 base = os.getenv('INTERX_GATEWAY_BASE', 'http://127.0.0.1:4000')
-key = os.getenv('LITELLM_MASTER_KEY', 'interx-local-master-key')
+key = os.environ['LITELLM_MASTER_KEY']
 headers = {'Authorization': f'Bearer {key}'}
 
 rows = []

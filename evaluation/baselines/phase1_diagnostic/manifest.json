@@ -1,0 +1,61 @@
+{
+  "artifacts": {
+    "evaluation/baselines/phase1_diagnostic/phase1_gold.jsonl": {
+      "bytes": 2997915,
+      "sha256": "d46212986f74630212110c63e6b6a120862b92f87edd1de469eed35c8c7f111c"
+    },
+    "evaluation/baselines/phase1_diagnostic/phase1_gold_build_config.json": {
+      "bytes": 930,
+      "sha256": "0167d99a2d92dab409c15707d3ccc6614dccb4c2ca5ec11ed955cb56e5233295"
+    },
+    "evaluation/results/baseline350/metrics.json": {
+      "bytes": 250405,
+      "sha256": "d61b44db40c99ff82f2fde3a1b2e3d00f88e9f8d83f4355cb5732e56e4f33bcb"
+    },
+    "evaluation/results/baseline350/raw.jsonl": {
+      "bytes": 15280075,
+      "sha256": "6a08443e3add72a7501ed2c3242ae49e3ece661e320162383144f32d6eb57e6b"
+    },
+    "evaluation/results/baseline350/run_manifest_from_baseline50.json": {
+      "bytes": 728,
+      "sha256": "30453e9f3404284a0b660e3ee86b2a5eb23862f3125bb6804e259fc09f5ec9e4"
+    }
+  },
+  "baseline_name": "Phase1 Diagnostic Baseline",
+  "commit": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+  "dataset_name": "InterX-350 Silver Benchmark (pre-V1 source state)",
+  "frozen_at": "2026-09-04T10:40:58+00:00",
+  "kg": {
+    "enabled": true,
+    "source": "all 350 QA evidence_refs (leaking for answer evaluation)"
+  },
+  "known_issues": [
+    "InterX-350 answers are Agent-generated Silver references, not authoritative Gold.",
+    "ID 65 question/answer mismatch in the pre-V1 source data.",
+    "KG was built from all 350 QA evidence references.",
+    "run_judge.py was incompatible with the generated reference schema and was not run.",
+    "recall_meta.elapsed_seconds combined router/reload/rewrite/decompose/retrieval/KG.",
+    "runtime records used mixed or unrecorded concurrency/reload conditions.",
+    "raw.jsonl contains retries; metric readers keep the last record per ID."
+  ],
+  "model_aliases": {
+    "answer_rewrite_judge": "qwen3-max",
+    "answer_router": "qwen3.6-plus",
+    "embedding": "qwen3-vl-embedding",
+    "reranker": "qwen3-rerank",
+    "upstream_at_run": "openai/deepseek-v4-flash"
+  },
+  "reload": {
+    "consistent_across_records": false,
+    "multi_worker_runner_override": "load once then no-op",
+    "per_answer_in_application": true
+  },
+  "run_date": "2026-07-17",
+  "tags_at_commit": [
+    "phase1-baseline"
+  ],
+  "worker_field_counts": {
+    "3": 133,
+    "unrecorded": 217
+  }
+}

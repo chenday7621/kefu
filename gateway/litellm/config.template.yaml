@@ -6,10 +6,25 @@ model_list:
       api_key: os.environ/UPSTREAM_1_API_KEY
       rpm: os.environ/UPSTREAM_1_RPM
       tpm: os.environ/UPSTREAM_1_TPM
+  # Explicit aliases used only by the optional LiteLLM Baseline V1 profile.
+  - model_name: qwen3-max
+    litellm_params:
+      model: openai/os.environ/UPSTREAM_1_MODEL
+      api_base: os.environ/UPSTREAM_1_BASE_URL
+      api_key: os.environ/UPSTREAM_1_API_KEY
+      rpm: os.environ/UPSTREAM_1_RPM
+      tpm: os.environ/UPSTREAM_1_TPM
+  - model_name: qwen3.6-plus
+    litellm_params:
+      model: openai/os.environ/UPSTREAM_1_MODEL
+      api_base: os.environ/UPSTREAM_1_BASE_URL
+      api_key: os.environ/UPSTREAM_1_API_KEY
+      rpm: os.environ/UPSTREAM_1_RPM
+      tpm: os.environ/UPSTREAM_1_TPM
 
 litellm_settings:
   master_key: os.environ/LITELLM_MASTER_KEY
-  set_verbose: true
+  set_verbose: false
   drop_params: true
   request_timeout: 600
 

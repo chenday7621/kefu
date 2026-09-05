@@ -1,0 +1,58 @@
+{
+  "dataset_name": "InterX-350 Silver Benchmark",
+  "generated_at": "2026-09-05T12:46:54+00:00",
+  "git": {
+    "baseline_v1_tag": null,
+    "head": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+    "tags_at_head": [
+      "phase1-baseline"
+    ],
+    "worktree_clean": false
+  },
+  "hashes": {
+    "answer_config": "57761e6dcabb67dac7bfeef7ad56984e07ccbe5aa1bc0e7c87a6a1a55db4f269",
+    "baseline_protocol": "836a83b8a633d3354380534047b18d5dd244d78125b7229e021e9db435917181",
+    "corpus": "bbbe6a72dcc6e9f841ec5b1d151ee475c33e0418536ea1106363849b7e6cc926",
+    "corpus_parts": {
+      "manual_artifacts_tree": "bbbe6a72dcc6e9f841ec5b1d151ee475c33e0418536ea1106363849b7e6cc926",
+      "milvus_lite_physical_tree_noncanonical": "81d6deeec6cd8fb0752e432fbee57a61d4b1d9d0b81bbc20b663a6e89f4f3b0e"
+    },
+    "dataset": "331a2764c09660ae02cc115ff4d12787afd758f48c4b399e5cdb80881b2ba91e",
+    "dependency_lock": "0f5f5ac13f4bf6868aa30b387f8705f499d2d7ddce21a4fe93c92ef9344279aa",
+    "gold_v2": "856e66f423acba8511ea2d188b12c591e5e4e2c0bb10c628cdcacda4183696d9",
+    "gold_v2_schema": "4f4977d46d10ae8c51ff41ca0e292b312d47ceb5eee87c57b0249d92a90af1ad",
+    "kg_build_manifest": "52d33a1565cdf8726ebe3f136b0f6676b258c085552ffae6f6732e9fcb317ac3",
+    "kg_mapped": "fda5ebed9688daa07ff95796ccc80d80a07b4584635eca728fc74204f3cc1333",
+    "kg_semantic": "6f922fc5e14bcb77e1aec0be9554a99258322405ee00c3821b747734e8d9e228",
+    "retrieval_config": "d9c156a1f80caa488e6bfdff1f01a4f087084ff21907bace5c28fd954c02f8c0",
+    "split": "34019e0e071a08818169979d1948be909d965872fa763555874048008de3be5c"
+  },
+  "inputs_present": {
+    "corpus": true,
+    "dev_split": true,
+    "gold_v2": true,
+    "heldout_split": true,
+    "vector_db": true
+  },
+  "models": {
+    "answer": "deepseek-v4-flash",
+    "embedding": "qwen3-vl-embedding",
+    "judge": "deepseek-v4-flash",
+    "provider_mode": "direct",
+    "provider_revision": "hosted model revision not exposed by provider API",
+    "reranker": "qwen3-rerank",
+    "rewrite": "deepseek-v4-flash"
+  },
+  "runtime": {
+    "concurrency": 1,
+    "kg_enabled": false,
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.8",
+    "reload_policy": "startup_once",
+    "warmup_ids": [
+      241
+    ],
+    "workers": 1
+  },
+  "schema_version": "baseline-v1-environment-manifest"
+}

@@ -36,8 +36,8 @@ for row in usable:
 lines.extend([
     '',
     'litellm_settings:',
-    '  master_key: interx-local-master-key',
-    '  set_verbose: true',
+    '  master_key: os.environ/LITELLM_MASTER_KEY',
+    '  set_verbose: false',
     '  drop_params: true',
     '  request_timeout: 120',
     '',

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://interx.local/schemas/reference-v2.json",
+  "title": "InterX Gold/Reference Schema V2",
+  "type": "object",
+  "required": [
+    "id", "question", "language", "quality_status", "reference_answer",
+    "evidence", "gold_chunk_ids", "gold_docs", "gold_images",
+    "source_provenance", "coverage"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "language": {"enum": ["zh", "en"]},
+    "quality_status": {"enum": ["silver", "verified", "quarantined"]},
+    "split": {"enum": ["train", "dev", "heldout", "quarantined"]},
+    "reference_answer": {"type": ["string", "null"]},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chunk_id", "text", "manual_id", "section", "source_location", "resolution_status"],
+        "properties": {
+          "chunk_id": {"type": ["string", "null"]},
+          "text": {"type": ["string", "null"]},
+          "manual_id": {"type": ["string", "null"]},
+          "section": {"type": ["string", "null"]},
+          "source_location": {"type": ["string", "null"]},
+          "resolution_status": {"enum": ["chunk_resolved", "source_resolved", "annotation_only", "unavailable"]},
+          "annotation": {"type": ["string", "null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "gold_chunk_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "gold_docs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "gold_images": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "gold_image_chunk_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "coverage": {
+      "type": "object",
+      "required": ["chunk", "document", "image", "evidence_text"],
+      "properties": {
+        "chunk": {"type": "boolean"},
+        "document": {"type": "boolean"},
+        "image": {"type": "boolean"},
+        "evidence_text": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "source_provenance": {"type": "object"}
+  },
+  "additionalProperties": true
+}

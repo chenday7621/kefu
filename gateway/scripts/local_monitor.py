@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -45,7 +46,8 @@ def health() -> dict[str, str]:
 
 @app.get('/api/status')
 def api_status() -> JSONResponse:
-    headers = {'Authorization': 'Bearer interx-local-master-key'}
+    master_key = os.getenv('LITELLM_MASTER_KEY')
+    headers = {'Authorization': f'Bearer {master_key}'} if master_key else {}
     payload = {
         'litellm_models': http_status('http://127.0.0.1:4000/v1/models', headers=headers, timeout=4),
         'semantic_cache_health': http_status('http://127.0.0.1:4010/health', timeout=3),

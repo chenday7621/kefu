@@ -1,7 +1,7 @@
 """Configuration models for the chat layer."""
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import yaml
@@ -45,6 +45,16 @@ class QueryRewriteConfig:
 
 
 @dataclass(frozen=True, slots=True)
+class SecurityConfig:
+    """Minimum public-demo security limits for the HTTP boundary."""
+    api_token_env: str = "INTERX_CHAT_API_TOKEN"
+    max_question_chars: int = 8_000
+    max_image_bytes: int = 5 * 1024 * 1024
+    max_request_bytes: int = 24 * 1024 * 1024
+    verbose_request_body_logging: bool = False
+
+
+@dataclass(frozen=True, slots=True)
 class ChatSettings:
     """Top-level settings for the multi-turn chat layer."""
     root: Path
@@ -53,6 +63,7 @@ class ChatSettings:
     memory: MemoryConfig
     query_rewrite: QueryRewriteConfig
     session_dir: Path
+    security: SecurityConfig = field(default_factory=SecurityConfig)
 
     @classmethod
     def load(cls, config_path: str | Path | None = None) -> "ChatSettings":
@@ -97,6 +108,15 @@ class ChatSettings:
             max_retries=int(raw_qr.get("max_retries", 1)),
         )
 
+        raw_security = raw.get("security", {})
+        security = SecurityConfig(
+            api_token_env=str(raw_security.get("api_token_env", "INTERX_CHAT_API_TOKEN")),
+            max_question_chars=int(raw_security.get("max_question_chars", 8_000)),
+            max_image_bytes=int(raw_security.get("max_image_bytes", 5 * 1024 * 1024)),
+            max_request_bytes=int(raw_security.get("max_request_bytes", 24 * 1024 * 1024)),
+            verbose_request_body_logging=bool(raw_security.get("verbose_request_body_logging", False)),
+        )
+
         return cls(
             root=root,
             config_path=final_config_path,
@@ -104,4 +124,5 @@ class ChatSettings:
             memory=memory,
             query_rewrite=query_rewrite,
             session_dir=resolve(raw.get("session_dir", "sessions")),
+            security=security,
         )

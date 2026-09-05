@@ -17,7 +17,7 @@ AUTH_HEADERS = {"Authorization": "Bearer sk_test_token"}
 
 
 @pytest.fixture(autouse=True)
-def _use_temp_sessions(tmp_path):
+def _use_temp_sessions(tmp_path, monkeypatch):
     from chat.config import ChatSettings, MemoryConfig, QueryRewriteConfig, LLMEndpoint
     settings = ChatSettings(
         root=Path("."), config_path=Path("."),
@@ -29,6 +29,7 @@ def _use_temp_sessions(tmp_path):
         session_dir=tmp_path,
     )
     import chat.api as api_mod
+    monkeypatch.setenv("INTERX_CHAT_API_TOKEN", "sk_test_token")
     api_mod._settings = settings
     yield
     api_mod._settings = None
@@ -47,6 +48,17 @@ def test_auth_required():
     """无 token 应返回 401."""
     resp = client.post("/chat", json={"question": "hello"})
     assert resp.status_code == 401
+
+
+def test_wrong_token_rejected():
+    resp = client.get("/sessions/testuser", headers={"Authorization": "Bearer wrong"})
+    assert resp.status_code == 401
+
+
+def test_token_fails_closed_when_unconfigured(monkeypatch):
+    monkeypatch.delenv("INTERX_CHAT_API_TOKEN", raising=False)
+    resp = client.get("/sessions/testuser", headers=AUTH_HEADERS)
+    assert resp.status_code == 503
 
 
 def test_question_required():
@@ -139,3 +151,19 @@ def test_images_max_count():
         "images": [img] * 4,
     }, headers=AUTH_HEADERS)
     assert resp.status_code == 422
+
+
+@pytest.mark.parametrize("path", [
+    "/sessions/..",
+    "/sessions/%2E%2E",
+    "/sessions/ok/%2E%2E/reset",
+])
+def test_path_traversal_rejected(path):
+    method = client.post if path.endswith("/reset") else client.get
+    resp = method(path, headers=AUTH_HEADERS)
+    assert resp.status_code in {400, 404}
+
+
+def test_question_size_limit():
+    resp = client.post("/chat", json={"question": "x" * 8001}, headers=AUTH_HEADERS)
+    assert resp.status_code == 413

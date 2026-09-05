@@ -13,6 +13,7 @@ from .context import format_context
 from .images import ImageEvidence, build_image_content_blocks, collect_image_evidences, format_image_manifest
 from .models import AnswerPayload, GranularityAnswer, QAResult, RecallMeta
 from .normalizer import normalize_answer
+from .observability import TraceRecorder
 from .query_rewrite import rewrite_query
 from .router import answer_general, route_question
 from .utils import extract_json, get_openai_client, load_prompt, resolve_model_name
@@ -46,6 +47,8 @@ def _call_llm(
     config: AnswerLayerConfig,
     messages: list[dict[str, Any]],
     response_format_json: bool = True,
+    telemetry: TraceRecorder | None = None,
+    stage: str = "generation",
 ) -> tuple[AnswerPayload, str]:
     """
     Call one LLM endpoint and parse the result into `AnswerPayload`.
@@ -61,6 +64,8 @@ def _call_llm(
     rf_enabled = response_format_json and config.response_format_json
 
     for attempt in range(max(1, config.max_retries + 1)):
+        call_started = time.monotonic()
+        response = None
         try:
             kwargs: dict[str, Any] = {
                 "model": model,
@@ -74,8 +79,25 @@ def _call_llm(
             response = client.with_options(timeout=config.timeout_seconds).chat.completions.create(**kwargs)
             raw = (response.choices[0].message.content or "").strip()
             data = extract_json(raw)
+            if telemetry:
+                telemetry.model_call(
+                    stage=stage,
+                    model=model,
+                    elapsed_ms=(time.monotonic() - call_started) * 1000,
+                    response=response,
+                    attempt=attempt + 1,
+                )
             return AnswerPayload.model_validate(data), raw
         except Exception as exc:
+            if telemetry:
+                telemetry.model_call(
+                    stage=stage,
+                    model=model,
+                    elapsed_ms=(time.monotonic() - call_started) * 1000,
+                    response=response,
+                    error=exc,
+                    attempt=attempt + 1,
+                )
             last_error = exc
             if rf_enabled and "response_format" in str(exc):
                 rf_enabled = False
@@ -92,6 +114,7 @@ def _answer_at_level(
     chunks: list[dict[str, Any]],
     image_evidences: list[ImageEvidence],
     settings: QASettings,
+    telemetry: TraceRecorder | None = None,
 ) -> GranularityAnswer:
     """
     Generate one answer from one evidence granularity.
@@ -129,7 +152,13 @@ def _answer_at_level(
         {"role": "user", "content": user_content},
     ]
 
-    answer, raw = _call_llm(endpoint=settings.llm, config=config, messages=messages)
+    answer, raw = _call_llm(
+        endpoint=settings.llm,
+        config=config,
+        messages=messages,
+        telemetry=telemetry,
+        stage=f"{level}_generation",
+    )
     answer = normalize_answer(answer, allowed_images=image_ids)
 
     return GranularityAnswer(
@@ -150,6 +179,7 @@ def _ensemble_answer(
     big_ans: GranularityAnswer,
     image_evidences: list[ImageEvidence],
     settings: QASettings,
+    telemetry: TraceRecorder | None = None,
 ) -> AnswerPayload:
     """
     Merge the three granularity answers into one final answer.
@@ -180,7 +210,13 @@ def _ensemble_answer(
         {"role": "user", "content": user_content},
     ]
 
-    answer, _raw = _call_llm(endpoint=settings.llm, config=settings.ensemble_layer, messages=messages)
+    answer, _raw = _call_llm(
+        endpoint=settings.llm,
+        config=settings.ensemble_layer,
+        messages=messages,
+        telemetry=telemetry,
+        stage="ensemble",
+    )
     return normalize_answer(answer, allowed_images=image_ids)
 
 
@@ -219,6 +255,8 @@ def answer(
     settings: QASettings | None = None,
     top_k: int | None = None,
     user_images: list[str] | None = None,
+    telemetry: TraceRecorder | None = None,
+    execution_concurrency: int = 1,
 ) -> QAResult:
     """
     Run the full answer pipeline: recall -> image collection -> 3 parallel answers -> ensemble.
@@ -229,12 +267,28 @@ def answer(
     if settings is None:
         settings = QASettings.load()
 
+    telemetry = telemetry or TraceRecorder(concurrency=execution_concurrency)
     started = time.monotonic()
+    # Baseline V1 has no decomposition feature; retain an explicit disabled field
+    # so trace consumers never confuse non-execution with missing telemetry.
+    telemetry.mark("decompose", "disabled", milliseconds=0.0)
 
     # --- Router: classify question as manual or general ---
-    if not route_question(question, settings=settings, user_images=user_images):
+    with telemetry.stage("router", skipped_status="bypassed_image" if user_images else None):
+        routed_to_rag = route_question(
+            question,
+            settings=settings,
+            user_images=user_images,
+            telemetry=telemetry,
+        )
+    if not routed_to_rag:
         log.info("Router: general question, skipping RAG")
-        general_answer, general_raw = answer_general(question, settings=settings)
+        with telemetry.stage("small_generation"):
+            general_answer, general_raw = answer_general(
+                question,
+                settings=settings,
+                telemetry=telemetry,
+            )
         elapsed = time.monotonic() - started
         empty_meta = RecallMeta(
             query=question,
@@ -264,11 +318,17 @@ def answer(
             big_answer=empty_gran,
             recall_meta=empty_meta,
             elapsed_seconds=round(elapsed, 3),
+            trace=telemetry.to_dict(),
         )
 
-    retrieval_reload()
+    if settings.retrieval_reload_policy == "per_query":
+        with telemetry.stage("reload"):
+            retrieval_reload()
+    else:
+        telemetry.mark("reload", "startup_once", milliseconds=0.0)
 
-    rewritten = rewrite_query(question, settings=settings)
+    with telemetry.stage("rewrite", skipped_status="disabled" if not settings.query_rewrite.enabled else None):
+        rewritten = rewrite_query(question, settings=settings, telemetry=telemetry)
 
     # The current implementation still queries retrieval with the original question.
     # Rewrites are generated and surfaced in metadata now so they can be folded into
@@ -278,17 +338,19 @@ def answer(
         top_k=top_k or settings.retrieval_top_k,
         image_paths=user_images,
     )
+    telemetry.absorb_retrieval(result.meta)
 
     # --- KG expansion (toggle-able, graceful degradation) ---
     kg_expansion_count = 0
     if settings.kg.enabled and _KG_AVAILABLE:
         try:
-            expander = ChunkExpander(KGSettings.load())
-            expansion = expander.expand(
-                [h.to_dict() for h in result.small_hits],
-                max_expanded=settings.kg.max_expanded,
-            )
-            expander.close()
+            with telemetry.stage("kg"):
+                expander = ChunkExpander(KGSettings.load())
+                expansion = expander.expand(
+                    [h.to_dict() for h in result.small_hits],
+                    max_expanded=settings.kg.max_expanded,
+                )
+                expander.close()
             if expansion.expanded_hits:
                 # Merge expanded hits into small_hits (dedup by chunk_id)
                 existing_ids = {h.chunk_id for h in result.small_hits}
@@ -318,8 +380,13 @@ def answer(
                 log.info("KG expansion: no new chunks found")
         except Exception as exc:
             log.warning("KG expansion failed, continuing without: %s", exc)
+            telemetry.fallback("kg_skipped_after_error")
     elif settings.kg.enabled and not _KG_AVAILABLE:
         log.warning("KG enabled but kuzu not installed, skipping expansion")
+        telemetry.mark("kg", "unavailable", milliseconds=0.0)
+        telemetry.fallback("kg_dependency_unavailable")
+    else:
+        telemetry.mark("kg", "disabled", milliseconds=0.0)
 
     recall_elapsed = time.monotonic() - started
     recall_meta = RecallMeta(
@@ -374,19 +441,33 @@ def answer(
         "big": big_dicts,
     }
     answers_by_level: dict[str, GranularityAnswer] = {}
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        futures = {
-            executor.submit(
-                _answer_at_level,
+
+    def timed_generation(
+        level: str,
+        chunks: list[dict[str, Any]],
+        images: list[ImageEvidence],
+    ) -> GranularityAnswer:
+        with telemetry.stage(f"{level}_generation"):
+            return _answer_at_level(
                 question,
                 level=level,
                 chunks=chunks,
-                image_evidences={
+                image_evidences=images,
+                settings=settings,
+                telemetry=telemetry,
+            )
+
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        futures = {
+            executor.submit(
+                timed_generation,
+                level,
+                chunks,
+                {
                     "small": small_images,
                     "mid": mid_images,
                     "big": big_images,
                 }[level],
-                settings=settings,
             ): level
             for level, chunks in level_chunks.items()
         }
@@ -398,14 +479,16 @@ def answer(
     mid_answer = answers_by_level["mid"]
     big_answer = answers_by_level["big"]
 
-    final_answer = _ensemble_answer(
-        question,
-        small_ans=small_answer,
-        mid_ans=mid_answer,
-        big_ans=big_answer,
-        image_evidences=ensemble_images,
-        settings=settings,
-    )
+    with telemetry.stage("ensemble"):
+        final_answer = _ensemble_answer(
+            question,
+            small_ans=small_answer,
+            mid_ans=mid_answer,
+            big_ans=big_answer,
+            image_evidences=ensemble_images,
+            settings=settings,
+            telemetry=telemetry,
+        )
 
     elapsed = time.monotonic() - started
     return QAResult(
@@ -416,4 +499,5 @@ def answer(
         big_answer=big_answer,
         recall_meta=recall_meta,
         elapsed_seconds=round(elapsed, 3),
+        trace=telemetry.to_dict(),
     )

@@ -130,4 +130,9 @@ def normalize_answer(answer: AnswerPayload, *, allowed_images: list[str]) -> Ans
             content = rebuilt.strip()
 
     content, images = _remove_unsupported_or_duplicate(content, images)
-    return AnswerPayload(content=content, images=images)
+    return AnswerPayload(
+        content=content,
+        images=images,
+        citation_chunk_ids=answer.citation_chunk_ids,
+        source_metadata=answer.source_metadata,
+    )

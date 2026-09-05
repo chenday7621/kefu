@@ -1,0 +1,19 @@
+........................................................................ [ 53%]
+...........................sss..ssssssssssssssssss.............          [100%]
+=============================== warnings summary ===============================
+.venv-baseline-v1/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/chenyi/projects/InterX-baseline-v1-candidate/.venv-baseline-v1/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+.venv-baseline-v1/lib/python3.12/site-packages/starlette/testclient.py:53
+  /home/chenyi/projects/InterX-baseline-v1-candidate/.venv-baseline-v1/lib/python3.12/site-packages/starlette/testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] kg/tests/test_expander.py:103: Graph DB not built yet
+SKIPPED [1] kg/tests/test_expander.py:120: Graph DB not built yet
+SKIPPED [1] kg/tests/test_expander.py:131: Graph DB not built yet
+SKIPPED [17] kg/tests/test_graph_retrieval.py:29: Graph DB not found: /home/chenyi/projects/InterX-baseline-v1-candidate/kg/state/graph.db/Bosch_Microwave_70767fb09e75.kuzu
+SKIPPED [1] kg/tests/test_graph_retrieval.py:29: Graph DB not found: /home/chenyi/projects/InterX-baseline-v1-candidate/kg/state/graph.db/manual_cea3fea3ecc0.kuzu
+114 passed, 21 skipped, 2 warnings in 20.48s

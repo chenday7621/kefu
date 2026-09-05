@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools==84.0.0", "wheel==0.47.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interx-baseline"
+version = "1.0.0"
+description = "InterX Baseline V1 workspace packages"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi==0.139.0",
+  "jieba==0.42.1",
+  "kuzu==0.11.3",
+  "markdown-it-py==4.0.0",
+  "milvus-lite==3.0",
+  "openai==2.45.0",
+  "pydantic==2.13.4",
+  "pymilvus==3.0.0",
+  "python-dotenv==1.2.2",
+  "PyYAML==6.0.3",
+  "rank-bm25==0.2.2",
+  "requests==2.34.2",
+  "uvicorn==0.51.0",
+]
+
+[project.optional-dependencies]
+test = ["httpx==0.28.1", "pytest==8.3.5"]
+web = ["streamlit==1.49.1"]
+tokenizer = ["tiktoken==0.11.0"]
+
+[tool.setuptools]
+packages = ["answer", "retrieval", "kg", "chat", "process_chunk"]
+
+[tool.setuptools.package-dir]
+answer = "answer/src/answer"
+retrieval = "retrieval/src/retrieval"
+kg = "kg/src/kg"
+chat = "chat/src/chat"
+process_chunk = "process/src/process_chunk"
+
+[tool.pytest.ini_options]
+testpaths = ["evaluation/tests", "answer/tests", "retrieval/tests", "chat/tests", "kg/tests"]
+addopts = "-ra"

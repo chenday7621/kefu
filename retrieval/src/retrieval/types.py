@@ -145,6 +145,14 @@ class RetrievalMeta:
     hybrid_top_k: int
     elapsed_seconds: float
     dense_error: str | None = None
+    stage_timings_ms: dict[str, float] = field(default_factory=dict)
+    call_counts: dict[str, int] = field(default_factory=dict)
+    stage_status: dict[str, str] = field(default_factory=dict)
+    cache_status: dict[str, str] = field(default_factory=dict)
+    fallbacks: list[str] = field(default_factory=list)
+    model_names: dict[str, str] = field(default_factory=dict)
+    retry_count: int = 0
+    timeout_count: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -157,6 +165,14 @@ class RetrievalMeta:
             "hybrid_top_k": self.hybrid_top_k,
             "elapsed_seconds": self.elapsed_seconds,
             "dense_error": self.dense_error,
+            "stage_timings_ms": self.stage_timings_ms,
+            "call_counts": self.call_counts,
+            "stage_status": self.stage_status,
+            "cache_status": self.cache_status,
+            "fallbacks": self.fallbacks,
+            "model_names": self.model_names,
+            "retry_count": self.retry_count,
+            "timeout_count": self.timeout_count,
         }
 
 

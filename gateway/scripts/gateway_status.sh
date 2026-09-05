@@ -23,5 +23,14 @@ timeout 5 curl -sS http://127.0.0.1:4010/health || true
 echo
 
 echo '-- litellm models'
-timeout 5 curl -sS -H 'Authorization: Bearer interx-local-master-key' http://127.0.0.1:4000/v1/models || true
+if [[ -f .env ]]; then
+  set -a
+  source .env
+  set +a
+fi
+if [[ -n "${LITELLM_MASTER_KEY:-}" ]]; then
+  timeout 5 curl -sS -H "Authorization: Bearer ${LITELLM_MASTER_KEY}" http://127.0.0.1:4000/v1/models || true
+else
+  echo 'LITELLM_MASTER_KEY is not configured'
+fi
 echo

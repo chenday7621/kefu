@@ -61,6 +61,7 @@ class QASettings:
     image_dir: Path
     max_workers: int
     kg: KGConfig
+    retrieval_reload_policy: str = "per_query"
 
     @classmethod
     def load(cls, config_path: str | Path | None = None) -> "QASettings":
@@ -103,6 +104,10 @@ class QASettings:
         raw_judge = raw.get("judge_llm", {})
         raw_kg = raw.get("kg", {})
 
+        reload_policy = str(raw.get("retrieval_reload_policy", "per_query"))
+        if reload_policy not in {"per_query", "startup_once"}:
+            raise ValueError("retrieval_reload_policy must be 'per_query' or 'startup_once'")
+
         return cls(
             root=root,
             config_path=final_config_path,
@@ -132,4 +137,5 @@ class QASettings:
                 max_expanded=int(raw_kg.get("max_expanded", 8)),
                 graph_db_root=resolve(raw_kg.get("graph_db_root", "../kg/state/graph.db")),
             ),
+            retrieval_reload_policy=reload_policy,
         )

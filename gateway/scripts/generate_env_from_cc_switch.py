@@ -2,14 +2,18 @@
 from __future__ import annotations
 
 import json
+import os
+import secrets
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-source = Path('/home/amax01/.cc-switch/codex-chat-proxy.json')
+source = Path(
+    os.getenv("CC_SWITCH_CONFIG", str(Path.home() / ".cc-switch/codex-chat-proxy.json"))
+).expanduser()
 out = ROOT / '.env'
 obj = json.loads(source.read_text(encoding='utf-8'))
-content = f"""LITELLM_MASTER_KEY=interx-local-master-key
-LITELLM_SALT_KEY=interx-local-salt-key
+content = f"""LITELLM_MASTER_KEY={secrets.token_urlsafe(32)}
+LITELLM_SALT_KEY={secrets.token_urlsafe(32)}
 REDIS_URL=redis://redis:6379/0
 LITELLM_PROXY_URL=http://litellm:4000
 UPSTREAM_1_BASE_URL={obj.get('upstream_base_url','')}

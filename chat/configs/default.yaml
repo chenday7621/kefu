@@ -25,3 +25,12 @@ query_rewrite:
 
 # Session persistence
 session_dir: sessions
+
+# Minimum public-demo security. The token itself is read from the environment
+# and is never committed to this file.
+security:
+  api_token_env: INTERX_CHAT_API_TOKEN
+  max_question_chars: 8000
+  max_image_bytes: 5242880
+  max_request_bytes: 25165824
+  verbose_request_body_logging: false

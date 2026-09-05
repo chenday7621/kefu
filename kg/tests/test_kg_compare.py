@@ -1,43 +1,63 @@
 #!/usr/bin/env python3
-"""Run answer pipeline with KG ON vs OFF and compare."""
-import json, sys, time, logging
-from pathlib import Path
+"""Optional live KG-on/KG-off diagnostic; never execute during pytest import.
 
-logging.basicConfig(level=logging.WARNING)
-sys.path.insert(0, '/home/amax01/lingchen/YanD/InterX/answer/src')
-sys.path.insert(0, '/home/amax01/lingchen/YanD/InterX/retrieval/src')
-sys.path.insert(0, '/home/amax01/lingchen/YanD/InterX/kg/src')
+This historical comparison makes paid model calls and is not part of the
+Baseline V1 offline test suite. Run this file explicitly only when a future KG
+experiment is authorized. Baseline V1 itself keeps KG disabled.
+"""
+from __future__ import annotations
+
+import json
+import logging
+import time
+from pathlib import Path
 
 from answer.config import QASettings
 from answer.pipeline import answer
 
-OUT = Path("/home/amax01/lingchen/YanD/InterX/kg/tests/kg_compare_results.json")
-q = "How do I update the firmware on my camera?"
-results = []
 
-for kg_on, label in [(True, "KG-ON"), (False, "KG-OFF")]:
-    settings = QASettings.load()
-    if not kg_on:
-        object.__setattr__(settings.kg, 'enabled', False)
-    
-    started = time.monotonic()
-    try:
-        result = answer(q, settings=settings)
-        elapsed = time.monotonic() - started
-        entry = {
-            "label": label, "kg": kg_on, "time_s": round(elapsed, 2),
-            "small_hits": result.recall_meta.small_hit_count,
-            "kg_expansion": result.recall_meta.kg_expansion_count,
-            "mid_hits": result.recall_meta.mid_hit_count,
-            "big_hits": result.recall_meta.big_hit_count,
-            "answer": result.final_answer.content[:500],
-        }
-    except Exception as e:
-        elapsed = time.monotonic() - started
-        entry = {"label": label, "kg": kg_on, "time_s": round(elapsed, 2), "error": str(e)}
-    
-    results.append(entry)
-    OUT.write_text(json.dumps(results, ensure_ascii=False, indent=2))
-    print(f"[{label}] done in {entry.get('time_s', '?')}s", flush=True)
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "kg" / "tests" / "kg_compare_results.json"
 
-print("ALL DONE", flush=True)
+
+def main() -> int:
+    """Run the legacy live comparison only after explicit script execution."""
+    logging.basicConfig(level=logging.WARNING)
+    question = "How do I update the firmware on my camera?"
+    results = []
+
+    for kg_on, label in ((True, "KG-ON"), (False, "KG-OFF")):
+        settings = QASettings.load()
+        object.__setattr__(settings.kg, "enabled", kg_on)
+        started = time.monotonic()
+        try:
+            result = answer(question, settings=settings)
+            entry = {
+                "label": label,
+                "kg": kg_on,
+                "time_s": round(time.monotonic() - started, 2),
+                "small_hits": result.recall_meta.small_hit_count,
+                "kg_expansion": result.recall_meta.kg_expansion_count,
+                "mid_hits": result.recall_meta.mid_hit_count,
+                "big_hits": result.recall_meta.big_hit_count,
+                "answer": result.final_answer.content[:500],
+            }
+        except Exception as exc:  # pragma: no cover - optional live diagnostic
+            entry = {
+                "label": label,
+                "kg": kg_on,
+                "time_s": round(time.monotonic() - started, 2),
+                "error": f"{type(exc).__name__}: {exc}",
+            }
+        results.append(entry)
+        OUT.write_text(
+            json.dumps(results, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(f"[{label}] done in {entry['time_s']}s", flush=True)
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

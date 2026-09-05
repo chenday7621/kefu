@@ -1,0 +1,654 @@
+{
+  "C1-labeltext|0.3": [
+    {
+      "qid": "64",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.375,
+      "second": 0.25,
+      "best_chunk": "manual_84d80d192e8d_small_0004_0000_0000",
+      "match_text": "在“个人防护装备”章节明确列出听力防护、眼部防护、多尘环境面罩、工作靴和急救箱。",
+      "chunk_content": "## 个人防护装备\n\n使用吹风机的人员需佩戴以下防护装备：\n\n1. 合格的听力防护装备\n2. 合格的眼部防护装备\n3. 在多尘环境中操作时佩戴面罩\n4. 防滑鞋底的工作靴或工作鞋\n5. 急救箱\n![图示](插图/Manual04_3.jpg)"
+    },
+    {
+      "qid": "66",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.357,
+      "second": 0.357,
+      "best_chunk": "manual_84d80d192e8d_small_0015_0001_0001",
+      "match_text": "部件清单中列出化油器调节螺钉（19）。",
+      "chunk_content": "- 阻风门（10）：阻风门位于发动机罩顶部，冷机启动时必须使用。按下油门扳机后阻风门会自动关闭\n- 化油器调节（19）：化油器设有三颗调节螺钉：低速油针、高速油针、怠速调节螺钉。化油器调节需适配当地作业条件，如气候、海拔、汽油及二冲程发动机机油类型。化油器调节详情见第 18 页\n![图示](插图/M"
+    },
+    {
+      "qid": "70",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.381,
+      "second": 0.095,
+      "best_chunk": "manual_615a6eb14309_small_0016_0000_0000",
+      "match_text": "“遥控器的使用”章节将无线遥控器作为操作空调的第三大组成部分，并说明附加功能按键位于遥控器盖板下方。",
+      "chunk_content": "## 遥控器的使用\n\n使用遥控器可更便捷地操作空调，附加功能的按键位于遥控器盖板下方。"
+    }
+  ],
+  "C1-labeltext|0.4": [
+    {
+      "qid": "64",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.462,
+      "second": 0.462,
+      "best_chunk": "manual_84d80d192e8d_small_0034_0001_0000",
+      "match_text": "操作前再次强调必须佩戴听力防护、眼部防护，多尘环境还须佩戴面罩。",
+      "chunk_content": "开始吸尘前，佩戴所需防护装备。\n警告！使用吹风机时必须佩戴听力防护装备、眼部防护装备；多尘环境中还必须佩戴面罩。\n![图示](插图/Manual04_38.jpg)\n![图示](插图/Manual04_39.jpg)\n操作吹风机时，设备与集尘袋需通过肩带固定，按图示将肩带挎在肩上。\n![图示](插图"
+    },
+    {
+      "qid": "65",
+      "doc": "电钻手册",
+      "format": "summary",
+      "best": 0.429,
+      "second": 0.071,
+      "best_chunk": "manual_60e374acbbde_small_0011_0001_0000",
+      "match_text": "腰带挂钩与批头夹（图2）章节：三条警告（关闭工具取下电池组、不悬挂高处不挂物体、螺钉紧固）加一条重要提示（仅用随附螺钉H、务必拧紧），并说明可安装在任意一侧适配左右手。",
+      "chunk_content": "腰带挂钩与批头夹（图2）\n![图示](插图/Manual11_7.jpg)\n**警告**：为降低**严重人身伤害风险**，调整或拆卸/安装附件前，关闭工具并取下电池组。意外启动可能导致受伤。\n**警告**：为降低**严重人身伤害风险**，不要将工具悬挂在高处，或在腰带挂钩上悬挂物体。仅将工具腰带挂钩"
+    },
+    {
+      "qid": "68",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.411,
+      "second": 0.107,
+      "best_chunk": "manual_84d80d192e8d_small_0023_0000_0001",
+      "match_text": "“热机启动”章节说明应按冷机步骤操作但不停留于阻风门位置，并补充启动绳拉动、机身按压地面及点火后按下阻风门控制器重复操作的步骤。",
+      "chunk_content": "按冷机启动的相同步骤操作，但不要将阻风门控制器停留在阻风门位置。\n无启动油门锁的油门手柄：先将阻风门控制器置于阻风门位置，再将其退回原位（B），以获得启动油门位置。\n重要！切勿完全拉出启动绳；启动绳完全拉出时也不要松开启动手柄，否则会损坏启动装置。\n![图示](插图/Manual04_27.jpg)"
+    }
+  ],
+  "C1-labeltext|0.5": [
+    {
+      "qid": "66",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.576,
+      "second": 0.485,
+      "best_chunk": "manual_84d80d192e8d_small_0015_0001_0001",
+      "match_text": "说明化油器设有三颗调节螺钉，并需根据气候、海拔、汽油及二冲程机油类型进行适配。",
+      "chunk_content": "- 阻风门（10）：阻风门位于发动机罩顶部，冷机启动时必须使用。按下油门扳机后阻风门会自动关闭\n- 化油器调节（19）：化油器设有三颗调节螺钉：低速油针、高速油针、怠速调节螺钉。化油器调节需适配当地作业条件，如气候、海拔、汽油及二冲程发动机机油类型。化油器调节详情见第 18 页\n![图示](插图/M"
+    },
+    {
+      "qid": "77",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.548,
+      "second": 0.238,
+      "best_chunk": "manual_615a6eb14309_small_0053_0000_0000",
+      "match_text": "自动运行（人工智能模式）章节标题及单冷型机型说明：此模式下风扇转速和温度会根据室内温度自动调节。",
+      "chunk_content": "### 单冷型机型\n\n此模式下，风扇转速和温度会根据室内温度自动调节。"
+    },
+    {
+      "qid": "84",
+      "doc": "空调手册",
+      "format": "text",
+      "best": 0.524,
+      "second": 0.46,
+      "best_chunk": "manual_615a6eb14309_small_0069_0000_0001",
+      "match_text": "清洁空气滤网流程：关闭电源并拔下电源线；打开前盖板（插图Manual01_29）；握住空气滤网把手向上提出机身（插图Manual01_30）；吸尘器或温水冲洗；阴凉处晾干。",
+      "chunk_content": "1. 关闭电源并拔下电源线。\n2. 打开前盖板，轻轻掀起盖板两侧即可。![图示](插图/Manual01_29.jpg)\n3. 握住空气滤网的把手，轻轻向上提起，将其从机身中取出。![图示](插图/Manual01_30.jpg)\n*功能会根据机型有所调整。\n4. 用吸尘器清理滤网，或用温水冲洗，若"
+    }
+  ],
+  "C1-labeltext|0.1": [
+    {
+      "qid": "66",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.156,
+      "second": 0.089,
+      "best_chunk": "manual_84d80d192e8d_small_0015_0001_0001",
+      "match_text": "给出化油器调节的完整操作：H/L/T 定义、出厂基础设置、低速油针与高速油针调节步骤，以及全油门 10 秒限制。",
+      "chunk_content": "- 阻风门（10）：阻风门位于发动机罩顶部，冷机启动时必须使用。按下油门扳机后阻风门会自动关闭\n- 化油器调节（19）：化油器设有三颗调节螺钉：低速油针、高速油针、怠速调节螺钉。化油器调节需适配当地作业条件，如气候、海拔、汽油及二冲程发动机机油类型。化油器调节详情见第 18 页\n![图示](插图/M"
+    },
+    {
+      "qid": "89",
+      "doc": "人体工学椅手册",
+      "format": "summary",
+      "best": 0.129,
+      "second": 0.048,
+      "best_chunk": "manual_cea3fea3ecc0_small_0001_0000_0000",
+      "match_text": "手册给出配件明细与紧固件清单，明确组装涉及椅背、坐垫、底座、扶手、气杆、底盘机构、脚踏、连接件、脚轮、头枕、腰枕、脚踏导轨及扳手、螺丝、垫圈、橡胶圈、盖帽等部件。",
+      "chunk_content": "## 配件明细\n\n请检查包装内配件是否齐全。如有缺件，请联系售后。\n\n| 编号 | 名称 | 数量 |\n| --- | --- | --- |\n| a | 椅背 | 1 |\n| b | 坐垫 | 1 |\n| c | 底座 | 1 |\n| d | 扶手 | 2 |\n| e | 气杆 | 1 |\n| f"
+    },
+    {
+      "qid": "89",
+      "doc": "人体工学椅手册",
+      "format": "summary",
+      "best": 0.105,
+      "second": 0.053,
+      "best_chunk": "manual_cea3fea3ecc0_small_0002_0001_0000",
+      "match_text": "安装说明从底座组件、脚轮、气杆开始，依次安装底盘机构和脚踏等，进一步印证组装涉及上述部件。",
+      "chunk_content": "3. 安装底盘机构。\n\n![图示](插图/Manual02_3.jpg)"
+    }
+  ],
+  "C1-labeltext|1.0": [
+    {
+      "qid": "67",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 1.0,
+      "second": 0.312,
+      "best_chunk": "manual_84d80d192e8d_small_0015_0001_0001",
+      "match_text": "阻风门位于发动机罩顶部，冷机启动时必须使用；按下油门扳机后阻风门会自动关闭。",
+      "chunk_content": "- 阻风门（10）：阻风门位于发动机罩顶部，冷机启动时必须使用。按下油门扳机后阻风门会自动关闭\n- 化油器调节（19）：化油器设有三颗调节螺钉：低速油针、高速油针、怠速调节螺钉。化油器调节需适配当地作业条件，如气候、海拔、汽油及二冲程发动机机油类型。化油器调节详情见第 18 页\n![图示](插图/M"
+    },
+    {
+      "qid": "71",
+      "doc": "空调手册",
+      "format": "text",
+      "best": 1.0,
+      "second": 0.111,
+      "best_chunk": "manual_615a6eb14309_small_0016_0000_0000",
+      "match_text": "使用遥控器可更便捷地操作空调，附加功能的按键位于遥控器盖板下方。",
+      "chunk_content": "## 遥控器的使用\n\n使用遥控器可更便捷地操作空调，附加功能的按键位于遥控器盖板下方。"
+    },
+    {
+      "qid": "71",
+      "doc": "空调手册",
+      "format": "text",
+      "best": 1.0,
+      "second": 0.828,
+      "best_chunk": "manual_615a6eb14309_small_0017_0000_0000",
+      "match_text": "### 无线遥控器\n![图示](插图/air_conditioner_01.png)",
+      "chunk_content": "### 无线遥控器\n\n![图示](插图/air_conditioner_01.png)\n*部分功能可能因机型不同而不支持。"
+    }
+  ],
+  "C1-labeltext|0.0": [
+    {
+      "qid": "67",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.074,
+      "second": 0.056,
+      "best_chunk": "manual_84d80d192e8d_small_0023_0000_0001",
+      "match_text": "\"启动与停机\"章节下的\"冷机启动\"小节，明确列出三步预备操作（点火、阻风门、泵油）及后续拉绳启动动作，并附有泵油膜片和拉绳操作的配图。",
+      "chunk_content": "按冷机启动的相同步骤操作，但不要将阻风门控制器停留在阻风门位置。\n无启动油门锁的油门手柄：先将阻风门控制器置于阻风门位置，再将其退回原位（B），以获得启动油门位置。\n重要！切勿完全拉出启动绳；启动绳完全拉出时也不要松开启动手柄，否则会损坏启动装置。\n![图示](插图/Manual04_27.jpg)"
+    },
+    {
+      "qid": "92",
+      "doc": "洗碗机手册",
+      "format": "summary",
+      "best": 0.097,
+      "second": 0.097,
+      "best_chunk": "manual_af54ac140c20_small_0031_0000_0000",
+      "match_text": "手册在“洗碗机概览”中以编号列出洗碗机的主要部件，并配有一张部件总览示意图。",
+      "chunk_content": "### 餐具放入洗碗机\n\n只有有序放置餐具，才能在能耗、洗涤和烘干效果方面实现洗碗机的最佳使用。\n\n- 放入洗碗机前擦去餐具上的大块食物残渣（骨头、种子等）\n- 尽可能将细长窄小的物品放在碗篮中间区域\n- 洗碗机内有两个独立碗篮。将较脏、较大的物品放在下层碗篮，较小、精致、较轻的物品放在上层碗篮\n-"
+    },
+    {
+      "qid": "126",
+      "doc": "电钻手册",
+      "format": "summary",
+      "best": 0.091,
+      "second": 0.091,
+      "best_chunk": "manual_60e374acbbde_small_0010_0000_0000",
+      "match_text": "部件名称列表中定义F为无键夹头，为电钻标准配置部件。",
+      "chunk_content": "单套无键夹头（图3-5）\n![图示](插图/drill0_01.png)\n![图示](插图/drill0_02.png)\n![图示](插图/drill0_03.png)\n**警告**：不要通过握住夹头前部并启动工具来拧紧钻头（或任何其他附件）。否则可能**损坏夹头并导致人身伤害**。更换附件时，务必"
+    }
+  ],
+  "C1-labeltext|0.6": [
+    {
+      "qid": "69",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.6,
+      "second": 0.25,
+      "best_chunk": "manual_84d80d192e8d_small_0014_0000_0000",
+      "match_text": "安全装置章节列出停机开关（3）：停机开关用于关闭发动机。",
+      "chunk_content": "- 停机开关（3）：停机开关用于关闭发动机\n- 油门锁（4）：油门锁可防止油门意外启动。握紧手柄时将油门锁压入手柄内，油门扳机（2）即可解锁。操作人员松开手柄时，油门扳机与油门锁会通过两套独立弹簧系统复位\n![图示](插图/Manual04_7.jpg)\n- 减震系统（6）：减震系统用于衰减发动机传"
+    },
+    {
+      "qid": "69",
+      "doc": "吹风机手册",
+      "format": "summary",
+      "best": 0.632,
+      "second": 0.316,
+      "best_chunk": "manual_84d80d192e8d_small_0024_0000_0000",
+      "match_text": "停机章节说明通过停机开关切断点火电源关闭发动机，附有停机开关图示 Manual04_29。",
+      "chunk_content": "### 停机\n\n通过停机开关切断点火电源关闭发动机。\n![图示](插图/Manual04_29.jpg)"
+    },
+    {
+      "qid": "73",
+      "doc": "空调手册",
+      "format": "text",
+      "best": 0.638,
+      "second": 0.298,
+      "best_chunk": "manual_615a6eb14309_small_0021_0000_0001",
+      "match_text": "选择安全且便于取用的位置；将支架安装在无阳光直射的位置；用螺丝刀将两颗螺丝拧紧固定支架；将遥控器滑入支架中。",
+      "chunk_content": "1. 选择安全且便于取用的位置。\n2. 用螺丝刀将两颗螺丝拧紧，固定支架。![图示](插图/Manual01_4.jpg)\n3. 将遥控器滑入支架中。![图示](插图/Manual01_5.jpg)"
+    }
+  ],
+  "C1-labeltext|0.2": [
+    {
+      "qid": "70",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.22,
+      "second": 0.22,
+      "best_chunk": "manual_615a6eb14309_small_0048_0000_0000",
+      "match_text": "“部件介绍”章节列出室内机和室外机两大组成部分，并配有 Manual01_0 和 Manual01_1 两张部件图。",
+      "chunk_content": "### 自清洁运行\n\n制冷和除湿运行时，室内机内部会产生水汽，可使用自清洁功能去除水汽。\n\n1. 按下自清洁键，显示屏上会显示自清洁标识。![图示](插图/Manual01_17.jpg)"
+    },
+    {
+      "qid": "73",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.217,
+      "second": 0.043,
+      "best_chunk": "manual_615a6eb14309_small_0021_0000_0000",
+      "match_text": "空调手册中“安装遥控器支架”小节给出安装步骤与两张插图。",
+      "chunk_content": "### 安装遥控器支架\n\n将支架安装在无阳光直射的位置，以保护遥控器。"
+    },
+    {
+      "qid": "75",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.2,
+      "second": 0.133,
+      "best_chunk": "manual_615a6eb14309_small_0048_0000_0000",
+      "match_text": "自清洁运行功能的使用方法和注意事项",
+      "chunk_content": "### 自清洁运行\n\n制冷和除湿运行时，室内机内部会产生水汽，可使用自清洁功能去除水汽。\n\n1. 按下自清洁键，显示屏上会显示自清洁标识。![图示](插图/Manual01_17.jpg)"
+    }
+  ],
+  "C1-labeltext|0.7": [
+    {
+      "qid": "72",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.714,
+      "second": 0.476,
+      "best_chunk": "manual_615a6eb14309_small_0018_0000_0001",
+      "match_text": "步骤1：取下电池盖，配图 Manual01_2.jpg。",
+      "chunk_content": "1. 取下电池盖。![图示](插图/Manual01_2.jpg)\n2. 装入新电池，确保电池正、负极安装正确。![图示](插图/Manual01_3.jpg)\n3. 重新装上电池盖。"
+    },
+    {
+      "qid": "72",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.75,
+      "second": 0.0,
+      "best_chunk": "manual_615a6eb14309_small_0018_0000_0001",
+      "match_text": "步骤3：重新装上电池盖。",
+      "chunk_content": "1. 取下电池盖。![图示](插图/Manual01_2.jpg)\n2. 装入新电池，确保电池正、负极安装正确。![图示](插图/Manual01_3.jpg)\n3. 重新装上电池盖。"
+    },
+    {
+      "qid": "77",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.724,
+      "second": 0.569,
+      "best_chunk": "manual_615a6eb14309_small_0053_0000_0001",
+      "match_text": "开启步骤三步：按下开/关键开启电源；反复按下模式键选择自动运行模式；按下上升/下降键选择运行代码，配图Manual01_19.jpg。",
+      "chunk_content": "1. 按下开/关键开启电源。\n2. 反复按下模式键，选择自动运行模式。\n3. 若当前温度高于或低于所需温度，按下上升/下降键选择所需的运行代码。![图示](插图/Manual01_19.jpg)"
+    }
+  ],
+  "C1-labeltext|0.8": [
+    {
+      "qid": "72",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.812,
+      "second": 0.312,
+      "best_chunk": "manual_615a6eb14309_small_0018_0000_0001",
+      "match_text": "步骤2：装入新电池，确保电池正、负极安装正确，配图 Manual01_3.jpg。",
+      "chunk_content": "1. 取下电池盖。![图示](插图/Manual01_2.jpg)\n2. 装入新电池，确保电池正、负极安装正确。![图示](插图/Manual01_3.jpg)\n3. 重新装上电池盖。"
+    },
+    {
+      "qid": "77",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.886,
+      "second": 0.314,
+      "best_chunk": "manual_615a6eb14309_small_0054_0000_0000",
+      "match_text": "注意事项：此模式下无法调节风扇转速，但可设置导风板自动摆风；部分机型不支持此功能。",
+      "chunk_content": "### 注\n\n- 此模式下无法调节风扇转速，但可设置导风板自动摆风。\n- 部分机型不支持此功能。"
+    },
+    {
+      "qid": "82",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.829,
+      "second": 0.22,
+      "best_chunk": "manual_615a6eb14309_small_0002_0000_0000",
+      "match_text": "节能小贴士中写明：每两周清洁一次空气滤网，滤网积攒的灰尘和杂质会堵塞风道，削弱制冷或除湿效果。",
+      "chunk_content": "# 节能小贴士\n\n以下小贴士有助于你使用空调时最大限度降低耗电量，遵循以下说明，可让空调运行更高效：\n\n- 室内切勿过度制冷，这不仅有害健康，还会增加耗电量。\n- 开启空调时，用百叶窗或窗帘遮挡阳光。\n- 开启空调时，将门窗紧闭。\n- 上下或左右调节出风方向，实现室内空气循环。\n- 短时间内想要快速"
+    }
+  ],
+  "C1-labeltext|0.9": [
+    {
+      "qid": "74",
+      "doc": "空调手册",
+      "format": "summary",
+      "best": 0.913,
+      "second": 0.087,
+      "best_chunk": "manual_615a6eb14309_small_0002_0000_0000",
+      "match_text": "节能小贴士：短时间内想要快速制冷或制热，可调高风扇转速",
+      "chunk_content": "# 节能小贴士\n\n以下小贴士有助于你使用空调时最大限度降低耗电量，遵循以下说明，可让空调运行更高效：\n\n- 室内切勿过度制冷，这不仅有害健康，还会增加耗电量。\n- 开启空调时，用百叶窗或窗帘遮挡阳光。\n- 开启空调时，将门窗紧闭。\n- 上下或左右调节出风方向，实现室内空气循环。\n- 短时间内想要快速"
+    },
+    {
+      "qid": "86",
+      "doc": "蒸汽清洁机手册",
+      "format": "text",
+      "best": 0.962,
+      "second": 0.077,
+      "best_chunk": "manual_23b4d127ef1c_small_0008_0000_0000",
+      "match_text": "将主机身底部滑到旋转拖头（18）的颈部。图中主机身和旋转拖头背面的孔位以白色标出，便于识别。确保旋转拖头颈部背面的孔从主机身背面的孔中露出。",
+      "chunk_content": "## 组装蒸汽清洁机\n\n无需专用工具。\n\n1. 从主机身（7）背部取下主机身固定夹（15）。\n2. 将主机身底部滑到旋转拖头（18）的颈部。图中主机身和旋转拖头背面的孔位以白色标出，便于识别。\n3. 确保旋转拖头颈部背面的孔从主机身背面的孔中露出。\n4. 将主机身固定夹（15）插入主机身背部孔位，锁"
+    },
+    {
+      "qid": "108",
+      "doc": "空气净化器手册",
+      "format": "text",
+      "best": 0.906,
+      "second": 0.059,
+      "best_chunk": "manual_413facd93068_small_0027_0000_0000",
+      "match_text": "清洁设备内外：清洁前请务必拔下电源插头。为保证最佳效果，每月清洁 1-2 次净化器。用温水或温和清洁剂浸湿布料擦拭净化器外壳再用软布擦干；打开背部滤网盖并取出滤网，用吸尘器和湿毛巾清洁滤网仓内部。",
+      "chunk_content": "## 清洁设备内外\n\n注意：清洁前请务必拔下电源插头。\n\n注意：为保证最佳效果，每月清洁 1-2 次净化器。灰尘较多的地区建议增加清洁频率。\n\n1. 用温水或温和清洁剂浸湿布料，擦拭净化器外壳，再用软布擦干。\n2. 打开背部滤网盖并取出滤网。用吸尘器和湿毛巾清洁滤网仓内部。\n3. 每月清洁设备及预过"
+    }
+  ],
+  "C2-manuallines|1.0": [
+    {
+      "qid": "243",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 1.0,
+      "second": 1.0,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0251_0000_0002",
+      "match_text": "## Battery switches",
+      "chunk_content": "1 Bilge pump switch Even if the bilge pump switch is not turned on, the bilge pump will detect when there is excessive water in the bilge and will aut"
+    },
+    {
+      "qid": "243",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 1.0,
+      "second": 0.577,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0097_0001_0000",
+      "match_text": "There are three switches on the battery switch assembly: the “START” switch, “HOUSE” switch, and “EMERG PARALLEL” switch.",
+      "chunk_content": "There are three switches on the battery switch assembly: the “START” switch, “HOUSE” switch, and “EMERG PARALLEL” switch.\n\n1. “HOUSE” switch (red)\n2. "
+    },
+    {
+      "qid": "243",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 1.0,
+      "second": 0.405,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0098_0000_0001",
+      "match_text": "In normal operation, keep the “START” and “HOUSE” switches in the ON position. Keep the “EMERG PARALLEL” switch in the OFF position. This setting allo",
+      "chunk_content": "In normal operation, keep the “START” and “HOUSE” switches in the ON position. Keep the “EMERG PARALLEL” switch in the OFF position. This setting allo"
+    }
+  ],
+  "C2-manuallines|0.7": [
+    {
+      "qid": "245",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.775,
+      "second": 0.501,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0141_0000_0000",
+      "match_text": "**WARNING:** This model is equipped with an over temperature warning system. If the engines start to overheat, a warning will appear on the multifunct",
+      "chunk_content": "## Over temperature\n\nWARNING: This model is equipped with an over temperature warning system. If the engines start to overheat, a warning will appear "
+    },
+    {
+      "qid": "246",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.77,
+      "second": 0.374,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0187_0000_0000",
+      "match_text": "## Storage pocket\n\nThe storage pocket is located on the starboard side of the glove compartment. The storage pocket is equipped with an auxiliary inpu",
+      "chunk_content": "## Storage pocket\n\nThe storage pocket is located on the starboard side of the glove compartment. The storage pocket is equipped with an auxiliary inpu"
+    },
+    {
+      "qid": "251",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.767,
+      "second": 0.406,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0211_0000_0001",
+      "match_text": " If the jet wash system will not be used for an extended period, turn the shut-off valve to the closed position. To prevent water from freezing in th",
+      "chunk_content": " If the jet wash system will not be used for an extended period, turn the shut-off valve to the closed position. To prevent water from freezing in th"
+    }
+  ],
+  "C2-manuallines|0.9": [
+    {
+      "qid": "245",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.982,
+      "second": 0.339,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0143_0000_0001",
+      "match_text": "If the cause of overheating cannot be found and corrected, take special precautions to avoid major engine damage while you return to shore. Single eng",
+      "chunk_content": "If the cause of overheating cannot be found and corrected, take special precautions to avoid major engine damage while you return to shore. Single eng"
+    },
+    {
+      "qid": "255",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.997,
+      "second": 0.61,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0140_0000_0001",
+      "match_text": "## Low oil pressure\n\n**WARNING:** If the oil pressure does not rise to specification, a warning will appear on the multi-function display and the buzz",
+      "chunk_content": "**WARNING:** If the oil pressure does not rise to specification, a warning will appear on the multi-function display and the buzzer will sound. If a f"
+    },
+    {
+      "qid": "309",
+      "doc": "Color E-Reader",
+      "format": "string-path",
+      "best": 0.91,
+      "second": 0.302,
+      "best_chunk": "Color_E_Reader_cd8f664e4860_small_0023_0000_0000",
+      "match_text": "## Photo\n\nGo to Photo and press \"M\" button to enter Photo mode. This device supports JPEG and BMP image format.\n\n**Photo previous and Next:** Press th",
+      "chunk_content": "## Photo\n\nGo to Photo and press \"M\" button to enter Photo mode. This device supports JPEG and BMP image format.\n\n**Photo previous and Next:** Press th"
+    }
+  ],
+  "C2-manuallines|0.5": [
+    {
+      "qid": "246",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.505,
+      "second": 0.479,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0098_0000_0001",
+      "match_text": "## Battery switches\n\nThe batteries and switch assembly are located in the battery compartment. This boat uses two marine batteries. One battery is des",
+      "chunk_content": "In normal operation, keep the “START” and “HOUSE” switches in the ON position. Keep the “EMERG PARALLEL” switch in the OFF position. This setting allo"
+    },
+    {
+      "qid": "250",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.534,
+      "second": 0.51,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0214_0000_0002",
+      "match_text": "1 Hose fitting To turn the water supply on or off:(1) Stop the engines. (See page 98.)(2) Open the rear platform hatch. (See page 63.) (3) Remove the ",
+      "chunk_content": "1 Hose fitting To turn the water supply on or off:(1) Stop the engines. (See page 98.)(2) Open the rear platform hatch. (See page 63.) (3) Remove the "
+    },
+    {
+      "qid": "253",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.512,
+      "second": 0.473,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0229_0000_0000",
+      "match_text": "## Removing the bimini top\n\n**To remove the bimini top:** (1) Store the bimini top. See “Storing the bimini top in the fully collapsed position”.(2) R",
+      "chunk_content": "## To install the bimini top\n\nWhen installing the bimini top, simply reverse the removal steps, and then make sure that the main pole mounting pins ar"
+    }
+  ],
+  "C2-manuallines|0.8": [
+    {
+      "qid": "246",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.854,
+      "second": 0.308,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0092_0000_0000",
+      "match_text": "## Helm components\n\n1. Tachometer (page 36)\n2. Multi-function display unit (page 36)\n3. Compass\n4. Stereo receiver (page 54)\n5. Handgrip\n6. Storage po",
+      "chunk_content": "## Helm components\n\n1. Tachometer (page 36)\n2. Multi-function display unit (page 36)\n3. Compass\n4. Stereo receiver (page 54)\n5. Handgrip\n6. Storage po"
+    },
+    {
+      "qid": "246",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.806,
+      "second": 0.324,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0163_0000_0000",
+      "match_text": "## Stereo system\n\nA stereo receiver is standard. The stereo system consists of the receiver, speakers, auxiliary input jack, USB terminal, and Bluetoo",
+      "chunk_content": "## Stereo system\n\nA stereo receiver is standard. The stereo system consists of the receiver, speakers, auxiliary input jack, USB terminal, and Bluetoo"
+    },
+    {
+      "qid": "259",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.882,
+      "second": 0.367,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0302_0000_0000",
+      "match_text": " Do not pull the remote control levers back to idle when trying to steer away from objects — you need throttle to steer.  Be sure passengers are hol",
+      "chunk_content": "### WARNING\n\n Do not pull the remote control levers back to idle when trying to steer away from objects — you need throttle to steer.  Be sure passe"
+    }
+  ],
+  "C2-manuallines|0.6": [
+    {
+      "qid": "250",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.658,
+      "second": 0.359,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0211_0000_0001",
+      "match_text": "## Jet wash\n\n### WARNING\n\nThe jet wash system must be used only by a passenger who is not operating the boat. While the jet wash system is being used,",
+      "chunk_content": " If the jet wash system will not be used for an extended period, turn the shut-off valve to the closed position. To prevent water from freezing in th"
+    },
+    {
+      "qid": "261",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.638,
+      "second": 0.401,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0332_0000_0000",
+      "match_text": "## Loading\n\n(1) Disconnect the trailer lights from the towing vehicle. (2) Back the trailer down the ramp as close to 90 to the shoreline as you can. ",
+      "chunk_content": "## Loading\n\n(1) Disconnect the trailer lights from the towing vehicle. (2) Back the trailer down the ramp as close to 90 to the shoreline as you can. "
+    },
+    {
+      "qid": "261",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.634,
+      "second": 0.465,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0333_0000_0000",
+      "match_text": "![Illustration](插图/Manual09_256.jpg)\n\n1 Stern eye (7) Perform the post-operation checks on page 105.",
+      "chunk_content": "1 Stern eye (7) Perform the post-operation checks on page 105."
+    }
+  ],
+  "C2-manuallines|0.4": [
+    {
+      "qid": "250",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.435,
+      "second": 0.359,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0214_0000_0000",
+      "match_text": "## To use the jet wash\n\n(1) Connect the coil hose to the hose fitting.\n\n![Illustration](插图/Manual09_173.jpg)\n\n1 Coil hose 2 Hose fitting (2) Start the",
+      "chunk_content": "1 Jet wash handle lever To stop using the jet wash:(1) Push the jet wash switch.(2) Stop the engines. (See page 98.)(3) Push the collar on the hose fi"
+    },
+    {
+      "qid": "255",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.458,
+      "second": 0.378,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0241_0000_0000",
+      "match_text": "### WARNING\n\nEngine oil is extremely hot immediately after the engines are turned off. Coming in contact with or getting any engine oil on your clothe",
+      "chunk_content": "### TIP\n\n When checking the engine oil level on land, the engine must be running while water is being supplied to the cooling water passages. (See “F"
+    },
+    {
+      "qid": "265",
+      "doc": "Nespresso CitiZ D111",
+      "format": "string-path",
+      "best": 0.401,
+      "second": 0.289,
+      "best_chunk": "Nespresso_CitiZ_D111_f14d069a1ca8_small_0012_0000_0000",
+      "match_text": "## ENERGY SAVING MODE\n\nThis machine is equipped with an energy saving feature. The machine will automatically enter Power Off mode after 9 minutes. To",
+      "chunk_content": "## ENERGY SAVING MODE\n\nThis machine is equipped with an energy saving feature. The machine will automatically enter Power Off mode after 9 minutes. To"
+    }
+  ],
+  "C2-manuallines|0.3": [
+    {
+      "qid": "253",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.389,
+      "second": 0.357,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0216_0000_0000",
+      "match_text": "## T-top (210FSH SPORT)\n\nThe bimini top can be installed to use the Ttop as a sunshade or rain cover for the leaning post. (See page 74 for bimini top",
+      "chunk_content": "## T-top (210FSH SPORT)\n\nThe bimini top can be installed to use the Ttop as a sunshade or rain cover for the leaning post. (See page 74 for bimini top"
+    },
+    {
+      "qid": "253",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.357,
+      "second": 0.312,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0220_0001_0000",
+      "match_text": "## Bimini top (210FSH DELUXE)\n\n## Setting up the bimini top\n\n**To set up the bimini top:** (1) Raise the bimini top.\n\n![Illustration](插图/Manual09_185.",
+      "chunk_content": "1 Forward support pole 2 Lock pin 3 Forward support pole mounting bracket (3) Remove the storage cover, unfold the bimini top, and pull it toward the "
+    },
+    {
+      "qid": "256",
+      "doc": "Yamaha 210FSH 2021",
+      "format": "string-path",
+      "best": 0.369,
+      "second": 0.358,
+      "best_chunk": "Yamaha_210FSH_2021_eabe705915a8_small_0250_0000_0000",
+      "match_text": "## Draining the bilge water on water\n\nThis model is equipped with a self-draining deck and bilge pump to drain the bilge water on water.\n\n## Self-drai",
+      "chunk_content": "## Self-draining deck\n\nMost water that enters the deck area drains automatically out the stern through the large drain holes in the deck. A one-way ch"
+    }
+  ],
+  "C2-manuallines|0.2": [
+    {
+      "qid": "300",
+      "doc": "Hydrabuds ANC",
+      "format": "string-path",
+      "best": 0.26,
+      "second": 0.243,
+      "best_chunk": "Hydrabuds_ANC_7df8e3629051_small_0015_0000_0000",
+      "match_text": "### Phone Voice Assistant\n\nTo activate the phone voice assistant, press and hold the left earbud until the first beep, then let go.\n\n![Illustration](插",
+      "chunk_content": "### Spotify Tap\n\nTo activate Spotify Tap, press and hold the right earbud until the first beep, then let go. The Spotify app resumes playback where yo"
+    },
+    {
+      "qid": "325",
+      "doc": "Yamaha WaveRunner 2005",
+      "format": "string-path",
+      "best": 0.288,
+      "second": 0.269,
+      "best_chunk": "Yamaha_WaveRunner_2005_30e68d52ed2b_small_0021_0000_0001",
+      "match_text": "All riders must wear a Coast Guard approved personal flotation device (PFD) that is suitable for personal watercraft use. Wear protective clothing. Se",
+      "chunk_content": "All riders must wear a Coast Guard approved personal flotation device (PFD) that is suitable for personal watercraft use. Wear protective clothing. Se"
+    },
+    {
+      "qid": "416",
+      "doc": "Yamaha Snowmobile",
+      "format": "string-path",
+      "best": 0.266,
+      "second": 0.259,
+      "best_chunk": "Yamaha_Snowmobile_2c5a3f27e6f2_small_0157_0001_0000",
+      "match_text": "### BRAKE\n\n(See page `8-17 ~ 8-19` for more details.) Test the brake at slow speed when starting out to make sure it is working properly. If the brake",
+      "chunk_content": "Drive track damage and/or failure could result in loss of braking ability and machine control, which could cause an accident. Always check the drive t"
+    }
+  ],
+  "C2-manuallines|0.0": [
+    {
+      "qid": "375",
+      "doc": "Motherboard",
+      "format": "string-path",
+      "best": 0.0,
+      "second": 0.0,
+      "best_chunk": "Motherboard_35519890098d_small_0388_0000_0000",
+      "match_text": "### 1.6",
+      "chunk_content": "## Recycling/Takeback Services\n\nRecycling and takeback programs come from our commitment to the highest standards for protecting our environment. We b"
+    }
+  ]
+}

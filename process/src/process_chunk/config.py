@@ -178,7 +178,7 @@ class ProcessSettings:
         """Return manual markdown files after applying the configured exclusion list."""
         return sorted(
             path
-            for path in self.paths.manual_dir.glob("*.md")
+            for path in self.paths.manual_dir.rglob("*.md")
             if path.name not in self.exclude_files
         )
 

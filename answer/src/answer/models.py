@@ -21,6 +21,14 @@ class AnswerPayload(BaseModel):
         )
     )
     images: list[str] = Field(default_factory=list, description="Image ids aligned with `<PIC>` placeholders.")
+    citation_chunk_ids: list[str] = Field(
+        default_factory=list,
+        description="Optional chunk citations emitted by citation-capable answer versions.",
+    )
+    source_metadata: list[dict[str, Any]] = Field(
+        default_factory=list,
+        description="Optional structured source metadata; not scored in Baseline V1.",
+    )
 
 
 @dataclass(slots=True)
@@ -83,6 +91,7 @@ class QAResult:
     big_answer: GranularityAnswer
     recall_meta: RecallMeta
     elapsed_seconds: float
+    trace: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -93,6 +102,7 @@ class QAResult:
             "big_answer": self.big_answer.to_dict(),
             "recall_meta": self.recall_meta.to_dict(),
             "elapsed_seconds": self.elapsed_seconds,
+            "trace": self.trace,
         }
 
 

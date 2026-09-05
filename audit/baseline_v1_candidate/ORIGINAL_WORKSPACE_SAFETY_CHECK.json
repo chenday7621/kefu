@@ -1,0 +1,18 @@
+{
+  "before_inventory_entries": 1144,
+  "candidate_operations_wrote_to_original_workspace": false,
+  "changed_original_hashes": [],
+  "changed_original_statuses": [],
+  "checked_at": "2026-09-05T12:52:10+00:00",
+  "current_status_entries": 1144,
+  "hashed_files_checked": 1143,
+  "missing_original_entries": [],
+  "new_entries_since_inventory": [],
+  "original_branch": "master",
+  "original_head": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+  "phase1_expected": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+  "phase1_raw_sha256": "6a08443e3add72a7501ed2c3242ae49e3ece661e320162383144f32d6eb57e6b",
+  "phase1_tag_target": "9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08",
+  "schema_version": "original-workspace-safety-check-v1",
+  "status": "PASS"
+}

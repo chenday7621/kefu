@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from typing import Any
 
 from .config import LLMEndpoint, QASettings
@@ -16,6 +17,7 @@ def route_question(
     *,
     settings: QASettings,
     user_images: list[str] | None = None,
+    telemetry: Any | None = None,
 ) -> bool:
     """Return True if the question should go through RAG, False for general LLM.
 
@@ -38,14 +40,26 @@ def route_question(
         model = settings.llm.model_name
         if not model:
             from .utils import resolve_model_name
-            model = resolve_model_name(settings.llm.model_name_env)
+            model = resolve_model_name(
+                settings.llm.env_file,
+                settings.llm.model_name,
+                settings.llm.model_name_env,
+            )
 
-        response = client.with_options(timeout=10.0).chat.completions.create(
-            model=model,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.0,
-            max_tokens=32,
-        )
+        call_started = time.monotonic()
+        try:
+            response = client.with_options(timeout=10.0).chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.0,
+                max_tokens=32,
+            )
+        except Exception as exc:
+            if telemetry:
+                telemetry.model_call(stage="router", model=model, elapsed_ms=(time.monotonic() - call_started) * 1000, error=exc)
+            raise
+        if telemetry:
+            telemetry.model_call(stage="router", model=model, elapsed_ms=(time.monotonic() - call_started) * 1000, response=response)
         raw = response.choices[0].message.content or ""
         data = extract_json(raw)
         route = str(data.get("route", "manual")).strip().lower()
@@ -53,6 +67,8 @@ def route_question(
 
     except Exception as exc:
         log.warning("Router failed, defaulting to RAG: %s", exc)
+        if telemetry:
+            telemetry.fallback("router_to_rag")
         return True
 
 
@@ -60,6 +76,7 @@ def answer_general(
     question: str,
     *,
     settings: QASettings,
+    telemetry: Any | None = None,
 ) -> tuple[Any, str]:
     """Answer a general customer service question using LLM directly.
 
@@ -85,7 +102,11 @@ def answer_general(
     model = settings.llm.model_name
     if not model:
         from .utils import resolve_model_name
-        model = resolve_model_name(settings.llm.model_name_env)
+        model = resolve_model_name(
+            settings.llm.env_file,
+            settings.llm.model_name,
+            settings.llm.model_name_env,
+        )
 
     kwargs: dict[str, Any] = {
         "model": model,
@@ -94,7 +115,15 @@ def answer_general(
         "max_tokens": 2048,
     }
 
-    response = client.with_options(timeout=90.0).chat.completions.create(**kwargs)
+    call_started = time.monotonic()
+    try:
+        response = client.with_options(timeout=90.0).chat.completions.create(**kwargs)
+    except Exception as exc:
+        if telemetry:
+            telemetry.model_call(stage="general_generation", model=model, elapsed_ms=(time.monotonic() - call_started) * 1000, error=exc)
+        raise
+    if telemetry:
+        telemetry.model_call(stage="general_generation", model=model, elapsed_ms=(time.monotonic() - call_started) * 1000, response=response)
     raw = response.choices[0].message.content or ""
     data = extract_json(raw)
     answer = AnswerPayload.model_validate(data)

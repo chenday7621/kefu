@@ -1,5 +1,6 @@
 paths:
-  manual_dir: data
+  # Repository-level bilingual manual source. `manual_files()` scans recursively.
+  manual_dir: ../data
   image_dir: data/插图
   artifact_dir: artifacts
 

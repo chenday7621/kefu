@@ -1,0 +1,38 @@
+{
+  "thresholds": {
+    "C2": 0.8,
+    "C1t": 0.6,
+    "C1p": 0.8
+  },
+  "ngram_n": 3,
+  "min_chunk_ngrams_for_reverse": 15,
+  "normalization": "strip whitespace/punct, lowercase (check_mapping.norm)",
+  "zh_lines_policy": "never line-extract for zh (line numbers verified inaccurate)",
+  "questions": 350,
+  "coverage": {
+    "chunk": 235,
+    "doc": 328,
+    "image": 296,
+    "neither_chunk_nor_image": 14,
+    "per_lang": {
+      "en_chunk": 157,
+      "en_doc": 165,
+      "en_image": 147,
+      "zh_chunk": 78,
+      "zh_doc": 163,
+      "zh_image": 149
+    }
+  },
+  "ref_stats": {
+    "ref_below_thr_C1p": 359,
+    "ref_below_thr_C1t": 27,
+    "ref_below_thr_C2": 1,
+    "ref_doc_not_found": 7,
+    "ref_lines_unreadable": 1,
+    "ref_mapped_C1p": 81,
+    "ref_mapped_C1t": 84,
+    "ref_mapped_C2": 1102,
+    "ref_no_file": 87
+  },
+  "gold_jsonl_sha256": "d46212986f74630212110c63e6b6a120862b92f87edd1de469eed35c8c7f111c"
+}

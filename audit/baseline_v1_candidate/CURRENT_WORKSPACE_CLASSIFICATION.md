@@ -1,0 +1,267 @@
+# Current Workspace Classification
+
+- Original workspace: `/home/chenyi/projects/InterX`
+- Branch / HEAD: `master` / `9679bd23c01dbd61f6cf51f5d3d831f12d3c4f08`
+- All tags: `phase1-baseline`
+- `git status --short` entries: 1144
+- Tracked modified: 995
+- Untracked: 149
+- Pure CRLF/LF-only tracked changes: 942
+- Tracked content changes after ignoring line endings: 53
+- Categories: A=134, B=10, C=4, D=941, E=55
+- Policy: category E is always excluded; mixed source files enter only through selectively reconstructed Foundation hunks.
+
+## Tracked content changes after ignoring CRLF/LF
+
+- `.gitattributes`
+- `.gitignore`
+- `README.md`
+- `agentic-rag/answers/ch-answers/ch-answers.csv`
+- `agentic-rag/answers/ch-answers/ch-answers.jsonl`
+- `agentic-rag/answers/ch-answers/evidence-notes/65.md`
+- `agentic-rag/answers/ch-answers/per_question/65.json`
+- `agentic-rag/answers/en-answers/answers.jsonl`
+- `agentic-rag/answers/en-answers/per_question/305.json`
+- `agentic-rag/en-question.csv`
+- `answer/.env.example`
+- `answer/README.md`
+- `answer/configs/default.yaml`
+- `answer/src/answer/config.py`
+- `answer/src/answer/models.py`
+- `answer/src/answer/normalizer.py`
+- `answer/src/answer/pipeline.py`
+- `answer/src/answer/query_rewrite.py`
+- `answer/src/answer/router.py`
+- `answer/src/answer/utils.py`
+- `chat/.env.example`
+- `chat/configs/default.yaml`
+- `chat/src/chat/api.py`
+- `chat/src/chat/config.py`
+- `chat/src/chat/store.py`
+- `chat/tests/test_api.py`
+- `chat/tests/test_chat.py`
+- `data/ch-manual/插图.zip`
+- `data/en-manual/插图.zip`
+- `gateway/.env.example`
+- `gateway/README.md`
+- `gateway/litellm/config.template.yaml`
+- `gateway/requirements.txt`
+- `gateway/scripts/bootstrap_env.sh`
+- `gateway/scripts/build_multi_upstream_config.py`
+- `gateway/scripts/gateway_status.sh`
+- `gateway/scripts/generate_env_from_cc_switch.py`
+- `gateway/scripts/local_monitor.py`
+- `gateway/scripts/render_config.py`
+- `gateway/scripts/routing_probe.py`
+- `gateway/scripts/start_gateway.sh`
+- `gateway/scripts/start_local.sh`
+- `gateway/scripts/start_monitoring.sh`
+- `gateway/scripts/stop_gateway.sh`
+- `gateway/scripts/stop_monitoring.sh`
+- `process/configs/default.yaml`
+- `process/requirements.txt`
+- `process/src/process_chunk/config.py`
+- `retrieval/src/retrieval/dense.py`
+- `retrieval/src/retrieval/rerank.py`
+- `retrieval/src/retrieval/retriever.py`
+- `retrieval/src/retrieval/types.py`
+- `web/app.py`
+
+## Category A — migrated Foundation files
+
+- `.gitattributes` — Repository hygiene required to prevent line-ending and runtime-artifact pollution. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `.gitignore` — Repository hygiene required to prevent line-ending and runtime-artifact pollution. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `agentic-rag/answers/ch-answers/ch-answers.csv` — Silver source governance: ID65 source repair or ID305 semantic-preserving normalization. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `agentic-rag/answers/ch-answers/ch-answers.jsonl` — Silver source governance: ID65 source repair or ID305 semantic-preserving normalization. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `agentic-rag/answers/ch-answers/evidence-notes/65.md` — Silver source governance: ID65 source repair or ID305 semantic-preserving normalization. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `agentic-rag/answers/ch-answers/per_question/65.json` — Silver source governance: ID65 source repair or ID305 semantic-preserving normalization. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `agentic-rag/answers/en-answers/answers.jsonl` — Silver source governance: ID65 source repair or ID305 semantic-preserving normalization. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `agentic-rag/answers/en-answers/per_question/305.json` — Silver source governance: ID65 source repair or ID305 semantic-preserving normalization. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `agentic-rag/en-question.csv` — Silver source governance: ID65 source repair or ID305 semantic-preserving normalization. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/config.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/models.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/normalizer.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/pipeline.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/query_rewrite.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/router.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/utils.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `chat/.env.example` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `chat/configs/default.yaml` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `chat/src/chat/api.py` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `chat/src/chat/config.py` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `chat/src/chat/store.py` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `chat/tests/test_api.py` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `chat/tests/test_chat.py` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/.env.example` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/litellm/config.template.yaml` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/requirements.txt` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/build_multi_upstream_config.py` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/gateway_status.sh` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/generate_env_from_cc_switch.py` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/local_monitor.py` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/render_config.py` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/routing_probe.py` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/start_local.sh` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `gateway/scripts/stop_gateway.sh` — Optional LiteLLM route, secret-safe config rendering, and operational reproducibility. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `kg/tests/test_kg_compare.py` — Portable test-harness repair: prevent an optional paid KG comparison script from executing during pytest collection; KG algorithm unchanged. Source ` M`; include=yes; method=selectively rewritten as an explicit main-only diagnostic.
+- `process/configs/default.yaml` — Corpus path/dependency reproducibility repair; chunk algorithm unchanged. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `process/requirements.txt` — Corpus path/dependency reproducibility repair; chunk algorithm unchanged. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `process/src/process_chunk/config.py` — Corpus path/dependency reproducibility repair; chunk algorithm unchanged. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `retrieval/src/retrieval/dense.py` — Stage telemetry or retrieval smoke support; scoring policy is unchanged. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `retrieval/src/retrieval/rerank.py` — Stage telemetry or retrieval smoke support; scoring policy is unchanged. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `retrieval/src/retrieval/retriever.py` — Stage telemetry or retrieval smoke support; scoring policy is unchanged. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `retrieval/src/retrieval/types.py` — Stage telemetry or retrieval smoke support; scoring policy is unchanged. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `web/app.py` — Minimum public-demo security hardening and tests. Source ` M`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/configs/baseline_v1.yaml` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/configs/baseline_v1_litellm_optional.yaml` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `answer/src/answer/observability.py` — Answer trace/call instrumentation, explicit provider config, or reload lifecycle foundation; Phase2 hunks excluded. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/audits/dataset_governance_v1.json` — Dataset/KG/secret governance evidence. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/audits/dataset_governance_v1.md` — Dataset/KG/secret governance evidence. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/audits/kg_leakage_audit_v1.json` — Dataset/KG/secret governance evidence. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/audits/kg_leakage_audit_v1.md` — Dataset/KG/secret governance evidence. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/audits/secret_permissions_v1.json` — Dataset/KG/secret governance evidence. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/BASELINE_V1_REPORT.md` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/BASELINE_V1_REPRODUCTION.md` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/PHASE1_DIAGNOSTIC_BASELINE.md` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/TIMING_AND_TRACE_V1.md` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/baseline_v1_environment_manifest.json` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/phase1_diagnostic/manifest.json` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/phase1_diagnostic/phase1_gold.jsonl` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/baselines/phase1_diagnostic/phase1_gold_build_config.json` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/configs/baseline_v1.yaml` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold/gold.jsonl` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold/gold_build_config.json` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold/match_samples.json` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/dev.jsonl` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/heldout.jsonl` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/manifest.json` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/quarantined.jsonl` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/references.jsonl` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/sample.jsonl` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/schema.json` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/train.jsonl` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/gold_v2/validation.json` — Rebuildable reference/evidence schema and mapping asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/JUDGE_STATUS_V1.md` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/README.md` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/calibration/.gitkeep` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/calibration/sample_v1/RUBRIC.md` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/calibration/sample_v1/human_review.csv` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/calibration/sample_v1/human_review.jsonl` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/calibration/sample_v1/sample_manifest.json` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/prompts/answer_judge_v1.txt` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/judge/results/.gitkeep` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/results/baseline350/error_samples.jsonl` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/results/baseline350/metrics.json` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/results/baseline350/metrics_stdout.json` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/results/baseline350/pipeline.log` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/results/baseline350/pipeline_retry.log` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/results/baseline350/raw.jsonl` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/results/baseline350/run_manifest_from_baseline50.json` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/schemas/query_trace_v1.json` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/audit_dataset_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/baseline_v1_common.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/build_baseline_v1_manifest.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/build_gold.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/build_gold_v2.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/check_mapping.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/check_secrets_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/compute_metrics_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/freeze_phase1_diagnostic.py` — Immutable Phase1 Diagnostic Baseline preservation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/gateway_probe.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/make_splits_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/network_preflight_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/prepare_train_only_kg_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/provider_probe.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/record_formal_run_status_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/retrieval_probe.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/run_baseline.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/run_judge.py` — Answer Judge or human-calibration foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/sample_human_judge_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/score_judge_calibration_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/sync_silver_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/scripts/validate_gold_v2.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/splits/v1/README.md` — Frozen reproducible Train/Dev/Heldout split asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/splits/v1/dev.jsonl` — Frozen reproducible Train/Dev/Heldout split asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/splits/v1/heldout.jsonl` — Frozen reproducible Train/Dev/Heldout split asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/splits/v1/quarantined.jsonl` — Frozen reproducible Train/Dev/Heldout split asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/splits/v1/split_manifest.json` — Frozen reproducible Train/Dev/Heldout split asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/splits/v1/train.jsonl` — Frozen reproducible Train/Dev/Heldout split asset. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/tests/conftest.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/tests/test_baseline_v1_foundation.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/tests/test_direct_provider_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/tests/test_judge_and_timing_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `evaluation/tests/test_security_v1.py` — Baseline V1 evaluation, schema, test, manifest, or reproduction foundation. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `kg/configs/baseline_v1_train_only.yaml` — Train-only KG input/leakage audit asset; formal runtime remains disabled. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `kg/state/v1_source_rebuild/evidence_mapped.json` — Train-only KG input/leakage audit asset; formal runtime remains disabled. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `kg/state/v1_source_rebuild/evidence_resolved.json` — Train-only KG input/leakage audit asset; formal runtime remains disabled. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `kg/state/v1_train_only/build_manifest.json` — Train-only KG input/leakage audit asset; formal runtime remains disabled. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `kg/state/v1_train_only/evidence_mapped.json` — Train-only KG input/leakage audit asset; formal runtime remains disabled. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `kg/state/v1_train_only/semantic_edges.json` — Train-only KG input/leakage audit asset; formal runtime remains disabled. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `pyproject.toml` — Pinned clean-environment install/reproduction entry point. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `requirements-baseline-v1.lock` — Pinned clean-environment install/reproduction entry point. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `retrieval/scripts/smoke_dense.py` — Stage telemetry or retrieval smoke support; scoring policy is unchanged. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `retrieval/src/retrieval/observability.py` — Stage telemetry or retrieval smoke support; scoring policy is unchanged. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `scripts/package_baseline_v1_audit.sh` — Pinned clean-environment install/reproduction entry point. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+- `scripts/reproduce_baseline_v1.sh` — Pinned clean-environment install/reproduction entry point. Source `??`; include=yes; method=exact file or selectively reconstructed Foundation-only hunks.
+
+## Category E — manual audit list (excluded)
+
+- `answer/README.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source ` M`; include=no.
+- `answer/configs/default.yaml` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source ` M`; include=no.
+- `gateway/README.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source ` M`; include=no.
+- `gateway/scripts/bootstrap_env.sh` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source ` M`; include=no.
+- `gateway/scripts/start_gateway.sh` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source ` M`; include=no.
+- `gateway/scripts/start_monitoring.sh` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source ` M`; include=no.
+- `gateway/scripts/stop_monitoring.sh` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source ` M`; include=no.
+- `BASELINE_MANIFEST.yaml` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `MISSING_ENV_VARS.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `PHASE1_RUN_REPORT.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `answer/src/answer/decompose.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `answer/src/answer/prompts/decompose.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/BASELINE_350_REPORT.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/BASELINE_50_REPORT.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/BASELINE_MANIFEST.yaml` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/README.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/VALIDATION_REPORT.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/audits/BASELINE_350_pending_audits.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/audits/zh_hit1_full12_audit.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/audits/zh_hit1_single_audit.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/config_snapshot/answer_default.yaml` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/config_snapshot/gateway_litellm_config.redacted.yaml` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/config_snapshot/retrieval_default.yaml` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/config_snapshot/run_manifest.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/metrics.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/raw.jsonl` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/router_diagnosis.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline50/sample_ids.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline_v1/dev/run_status.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline_v1/heldout/run_status.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline_v1/preflight/gateway_probe.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline_v1/preflight/gateway_probe_latest.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline_v1/preflight/network_egress.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline_v1/preflight/provider_probe.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/baseline_v1/preflight/retrieval_probe.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/errortest/raw.jsonl` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/smoke5/metrics.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/results/smoke5/raw.jsonl` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/analyze_350.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/audit_zh_hit1.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/audit_zh_hit1_full.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/check_c2_lang.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/compare_regress.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/compute_metrics.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/make_350_report.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/router_diagnose.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/run_350_pipeline.sh` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/scripts/sample_stratified.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/test_results/judge_dry_run_v1.txt` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/test_results/pytest_baseline_v1.txt` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/test_results/pytest_clean_env_baseline_v1.txt` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/test_results/reproduce_baseline_v1.txt` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `evaluation/test_results/test_summary_v1.json` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `verify/phase1-smoke/run_smoke.py` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+- `智能客服Agent项目改造流程.md` — Purpose cannot be established as Baseline V1 Foundation with sufficient confidence; conservatively excluded. Source `??`; include=no.
+
+## Complete record
+
+The adjacent JSON contains all 1,144 records, including status, source hash, source change kind, category, rationale, and inclusion decision.

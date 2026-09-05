@@ -1,0 +1,28 @@
+{
+  "build_script": "evaluation/scripts/build_gold_v2.py",
+  "coverage": {
+    "chunk": 235,
+    "document": 328,
+    "evidence_text": 250,
+    "image": 296
+  },
+  "dataset_hash": "331a2764c09660ae02cc115ff4d12787afd758f48c4b399e5cdb80881b2ba91e",
+  "dataset_name": "InterX-350 Silver Benchmark",
+  "legacy_reference_hash": "5f78bf1b6b30fe40c93d3720fe4ee695f1145028746a02cbf278df1fb92ca294",
+  "quality_status_counts": {
+    "quarantined": 0,
+    "silver": 349,
+    "verified": 1
+  },
+  "record_count": 350,
+  "references_hash": "856e66f423acba8511ea2d188b12c591e5e4e2c0bb10c628cdcacda4183696d9",
+  "sample_ids": [
+    "65",
+    "70",
+    "242",
+    "153",
+    "303"
+  ],
+  "schema_hash": "4f4977d46d10ae8c51ff41ca0e292b312d47ceb5eee87c57b0249d92a90af1ad",
+  "schema_version": "gold-reference-v2"
+}

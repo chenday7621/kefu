@@ -7,6 +7,7 @@ from typing import Any
 from .config import RetrievalSettings
 from .dense import embed_query, search_milvus
 from .fusion import rrf_fuse
+from . import observability as obs
 from .rerank import Reranker
 from .sparse import BM25Index, _chunk_to_hit
 from .types import BigHit, HierarchicalResult, MidHit, RetrievalMeta, SearchHit
@@ -74,14 +75,26 @@ def _raw_dense_search(
     """
     small_lookup = {c["chunk_id"]: c for c in small_chunks}
     try:
-        qvec = embed_query(query, api_config=settings.api, config=settings.embedding, image_paths=image_paths)
-        raw_hits = search_milvus(
-            db_path=settings.db_path,
-            query_vector=qvec,
-            vs_config=settings.vector_store,
-            top_k=top_k,
-            filter_expr=filter_expr,
-        )
+        embed_started = time.monotonic()
+        obs.increment("embedding")
+        try:
+            qvec = embed_query(query, api_config=settings.api, config=settings.embedding, image_paths=image_paths)
+            obs.set_status("embedding", "ok")
+        finally:
+            obs.add_time("embedding", (time.monotonic() - embed_started) * 1000)
+        dense_started = time.monotonic()
+        obs.increment("dense")
+        try:
+            raw_hits = search_milvus(
+                db_path=settings.db_path,
+                query_vector=qvec,
+                vs_config=settings.vector_store,
+                top_k=top_k,
+                filter_expr=filter_expr,
+            )
+        finally:
+            obs.add_time("dense", (time.monotonic() - dense_started) * 1000)
+        obs.set_status("dense", "ok")
         results: list[SearchHit] = []
         for item in raw_hits:
             chunk = small_lookup.get(item["chunk_id"])
@@ -90,7 +103,11 @@ def _raw_dense_search(
             results.append(_chunk_to_hit(chunk, score=item.get("score", 0.0), rank=item["rank"], source="dense"))
         return results, None
     except Exception as exc:
+        if obs.current()["status"].get("embedding") == "not_run":
+            obs.set_status("embedding", "error")
+        obs.set_status("dense", "error")
         if settings.params.allow_dense_fallback:
+            obs.current()["fallbacks"].append("dense_to_bm25")
             return [], str(exc)
         raise
 
@@ -111,7 +128,11 @@ def _hybrid_search(
     First-stage recall intentionally over-generates candidates so rerank or later
     business logic can work from a more diverse candidate pool.
     """
+    bm25_started = time.monotonic()
+    obs.increment("bm25")
     bm25_hits = bm25_index.search(query, top_k=settings.params.bm25_top_k)
+    obs.add_time("bm25", (time.monotonic() - bm25_started) * 1000)
+    obs.set_status("bm25", "ok")
     dense_hits, dense_error = _raw_dense_search(
         query,
         settings=settings,
@@ -122,11 +143,14 @@ def _hybrid_search(
     )
 
     candidate_k = max(top_k, settings.params.rerank_candidate_k)
+    fusion_started = time.monotonic()
     fused = rrf_fuse(
         {"dense": dense_hits, "bm25": bm25_hits},
         config=settings.fusion,
         top_k=candidate_k,
     )
+    obs.add_time("fusion", (time.monotonic() - fusion_started) * 1000)
+    obs.set_status("fusion", "ok")
     return fused, dense_error
 
 
@@ -144,6 +168,10 @@ def search(
     This is the primary retrieval entry point used by the answer and chat layers.
     """
     settings = _get_settings()
+    obs.set_model("embedding", settings.embedding.model_name)
+    obs.set_model("rerank", settings.rerank.model_name)
+    obs.current()["cache"]["corpus"] = "hit" if _small_chunks is not None else "miss"
+    obs.current()["cache"]["bm25"] = "hit" if _bm25_index is not None else "miss"
     small_chunks, _, _ = _get_corpus()
     bm25_index = _get_bm25()
     limit = top_k or settings.params.hybrid_top_k
@@ -160,11 +188,21 @@ def search(
 
     use_rerank = settings.rerank.enabled if rerank is None else rerank
     if use_rerank and hits:
+        rerank_started = time.monotonic()
+        obs.increment("rerank")
         try:
             hits = Reranker(settings=settings).rerank(query, hits)
+            obs.set_status("rerank", "ok")
         except Exception:
             # Rerank failures should not break the main search path.
-            pass
+            obs.set_status("rerank", "error")
+            obs.current()["fallbacks"].append("rerank_skipped_after_error")
+        finally:
+            obs.add_time("rerank", (time.monotonic() - rerank_started) * 1000)
+    elif not use_rerank:
+        obs.set_status("rerank", "disabled")
+    else:
+        obs.set_status("rerank", "skipped_no_hits")
 
     return hits[:limit]
 
@@ -330,6 +368,7 @@ def search_hierarchical(
     This structure is tailored for the answer layer, which may ask different LLM
     sub-chains to reason over small, mid, and big evidence separately.
     """
+    trace = obs.reset()
     settings = _get_settings()
     started = time.monotonic()
 
@@ -347,6 +386,14 @@ def search_hierarchical(
         bm25_top_k=settings.params.bm25_top_k,
         hybrid_top_k=settings.params.hybrid_top_k,
         elapsed_seconds=round(elapsed, 3),
+        stage_timings_ms=dict(trace["timings_ms"]),
+        call_counts=dict(trace["calls"]),
+        stage_status=dict(trace["status"]),
+        cache_status=dict(trace["cache"]),
+        fallbacks=list(trace["fallbacks"]),
+        model_names=dict(trace["models"]),
+        retry_count=int(trace["retry_count"]),
+        timeout_count=int(trace["timeout_count"]),
     )
 
     return HierarchicalResult(
