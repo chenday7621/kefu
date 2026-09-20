@@ -177,12 +177,22 @@ Bearer Token 必须与配置值真实比较；不要使用示例值公开部署�
 
 ## 6. Git LFS 与运行时资产
 
-以下大文件通过 Git LFS 保存：
+`.gitattributes` 为以下扩展名声明了 Git LFS：
 
 ```text
 *.zip
 *.tar.gz
 ```
+
+当前 Candidate 的实际对象状态需要额外区分：
+
+| 文件 | 当前存储方式 |
+| --- | --- |
+| `data/ch-manual/插图.zip` | Git LFS，约 142 MB |
+| `data/en-manual/插图.zip` | Git LFS，约 142 MB |
+| `data/build-artifacts.tar.gz` | 历史原因仍是普通 Git blob，约 69.9 MB |
+
+GitHub 已接受 `build-artifacts.tar.gz`，但提示它超过建议的 50 MB。它仍低于 GitHub 的单文件硬限制；本轮没有为了整理历史而重写 Candidate 提交。后续若迁移该文件到 LFS，应作为独立的历史治理任务处理。
 
 克隆后必须执行：
 
