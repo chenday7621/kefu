@@ -1,0 +1,128 @@
+{
+  "status": "BASELINE_V2_CERTIFIED",
+  "task_count": 40,
+  "valid_trials": 40,
+  "success_count": 32,
+  "failure_count": 8,
+  "task_success_rate": 0.8,
+  "mean_overall_reward": 0.8,
+  "mean_db_reward": 0.8,
+  "mean_nl_reward": 1.0,
+  "nl_assertion_task_counts": {
+    "empty": 28,
+    "unavailable": 1,
+    "nonempty": 11
+  },
+  "tool_call_summary": {
+    "available_count": 40,
+    "mean": 7.5,
+    "median": 7.0,
+    "p90": 10.100000000000001,
+    "total": 300
+  },
+  "registry_validations": 300,
+  "environment_results": 300,
+  "validation_errors": 0,
+  "validation_error_types": {},
+  "official_tool_errors": 5,
+  "unique_tools": [
+    "calculate",
+    "cancel_pending_order",
+    "exchange_delivered_order_items",
+    "find_user_id_by_email",
+    "find_user_id_by_name_zip",
+    "get_order_details",
+    "get_product_details",
+    "get_user_details",
+    "list_all_product_types",
+    "modify_pending_order_address",
+    "modify_pending_order_items",
+    "modify_pending_order_payment",
+    "modify_user_address",
+    "return_delivered_order_items",
+    "transfer_to_human_agents"
+  ],
+  "decision_summary": {
+    "available_count": 40,
+    "mean": 9.525,
+    "median": 10.0,
+    "p90": 12.0,
+    "total": 381
+  },
+  "transition_summary": {
+    "available_count": 40,
+    "mean": 20.05,
+    "median": 21.0,
+    "p90": 25.0,
+    "total": 802
+  },
+  "termination_distribution": {
+    "USER_STOP": 40
+  },
+  "success_mean_decisions": 9.5,
+  "failure_mean_decisions": 9.625,
+  "latency_summary": {
+    "available_count": 40,
+    "mean": 52879.50236022443,
+    "median": 49329.13398600067,
+    "p90": 78130.31066890399,
+    "total": 2115180.0944089773
+  },
+  "model_latency_summary": {
+    "available_count": 40,
+    "mean": 38983.58458372459,
+    "median": 37535.73393950501,
+    "p90": 60180.52230053291,
+    "total": 1559343.3833489835
+  },
+  "token_summary": {
+    "assistant": {
+      "prompt_tokens": {
+        "available_count": 40,
+        "mean": 64897.725,
+        "median": 67404.5,
+        "p90": 85777.0,
+        "total": 2595909
+      },
+      "completion_tokens": {
+        "available_count": 40,
+        "mean": 3342.775,
+        "median": 3200.0,
+        "p90": 5364.800000000001,
+        "total": 133711
+      },
+      "total_tokens": {
+        "available_count": 40,
+        "mean": 68240.5,
+        "median": 70941.5,
+        "p90": 90264.70000000001,
+        "total": 2729620
+      }
+    },
+    "user": {
+      "prompt_tokens": {
+        "available_count": 40,
+        "mean": 5738,
+        "median": 5395.5,
+        "p90": 8744.900000000001,
+        "total": 229520
+      },
+      "completion_tokens": {
+        "available_count": 40,
+        "mean": 755.2,
+        "median": 702.5,
+        "p90": 1180.9,
+        "total": 30208
+      },
+      "total_tokens": {
+        "available_count": 40,
+        "mean": 6493.2,
+        "median": 6182.0,
+        "p90": 10176.1,
+        "total": 259728
+      }
+    }
+  },
+  "scorer_tokens": null,
+  "monetary_cost": null
+}

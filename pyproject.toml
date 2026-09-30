@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kefu-agent-public"
+version = "0.1.0"
+description = "Transactional customer service runtime and sanitized evaluation evidence"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5"]
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["kefu_runtime*", "evaluation"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]

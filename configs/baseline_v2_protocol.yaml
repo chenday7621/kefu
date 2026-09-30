@@ -1,0 +1,29 @@
+baseline_id: kefu_tau3_retail_v2_certified
+benchmark:
+  name: tau2-bench
+  version: '1.0.1'
+  commit: fc0055dc4e0a316c3f83133267fbd6faaa770992
+  domain: retail
+  split: test
+agent:
+  runtime: KefuTau2Agent
+  decision_engine: kefu
+  registry: kefu
+  executor: tau2_official_environment
+protocol:
+  trials_per_task: 1
+  concurrency: 1
+  temperature: 0.0
+  kefu_model_decision_limit: 15
+  tau2_orchestrator_transition_limit: 30
+  simulation_seed: 300
+  provider_seed_supported: false
+models:
+  agent_model: openai/deepseek-v4-flash
+  user_model: openai/deepseek-v4-flash
+  scorer_model: openai/deepseek-v4-flash
+identity:
+  runtime_guard_required: true
+  block_official_llm_agent: true
+retries:
+  agent_behavior_retry: false

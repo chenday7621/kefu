@@ -1,0 +1,43 @@
+{
+  "internal_checkpoint": "85f6815e0726d1b541f888ce08ffe65ed6a163e6",
+  "public_runtime_files": [
+    {
+      "source_path": "evaluation/src/evaluation/models.py",
+      "public_path": "src/kefu_runtime/models.py",
+      "sha256": "de9c9631235a9b081b1efc5ce1dfb17c4905241cc2612d5a34f6ab31e0598cca",
+      "transformation": "none"
+    },
+    {
+      "source_path": "evaluation/src/evaluation/tools.py",
+      "public_path": "src/kefu_runtime/tools.py",
+      "sha256": "7cccc1abbdd1a2a8d47ffe63981cd6458bcab13299e9b6f923213a689a8c1da7",
+      "transformation": "none"
+    },
+    {
+      "source_path": "evaluation/src/evaluation/tool_loop.py",
+      "public_path": "src/kefu_runtime/tool_loop.py",
+      "sha256": "019c584589b4f32b27381b186e45bb9bb27371aea4c6fb6e994e317c738e8ed2",
+      "transformation": "none"
+    },
+    {
+      "source_path": "evaluation/src/evaluation/identity_monitor.py",
+      "public_path": "src/kefu_runtime/identity_monitor.py",
+      "sha256": "326e2a853fb6934513e2ec15d3c520781023a8ea49a3488903b606378b18512e",
+      "transformation": "none"
+    },
+    {
+      "source_path": "evaluation/src/evaluation/tau3_kefu_agent.py",
+      "public_path": "src/kefu_runtime/tau3_kefu_agent.py",
+      "sha256": "7a6b9b08badb4accc354475c71336d3e99b587cf36339b3683d13e06e316323e",
+      "transformation": "none"
+    },
+    {
+      "source_path": "evaluation/src/evaluation/tau3.py",
+      "public_path": "src/kefu_runtime/tau3.py",
+      "sha256": "ff4984a2ce5a551f0ff5878fb88dfbc62c06c8d76604a8a2842a60fdbaa25bd8",
+      "transformation": "none"
+    }
+  ],
+  "new_public_files": "Packaging, offline runner/metrics, documentation and tests; not part of original certified run.",
+  "internal_protocol_sha256": "6c95f7c766f0028e75743255403822b39009bdbce47c7f75b3d0400107aa084d"
+}

@@ -1,0 +1,23 @@
+{
+  "baseline": "Kefu tau-bench Retail v2 Certified Baseline",
+  "status": "BASELINE_V2_CERTIFIED",
+  "task_count": 40,
+  "success_count": 32,
+  "task_success_rate": 0.8,
+  "identity": {
+    "task_count": 40,
+    "identity_guard_installed_tasks": 40,
+    "official_llm_agent_calls_measured": 0,
+    "kefu_model_decisions": 381,
+    "kefu_registry_validations": 300,
+    "official_environment_results": 300,
+    "identity_gate": "PASS"
+  },
+  "test_set_previously_inspected": true,
+  "provider_seed_supported": false,
+  "internal_checkpoint": "85f6815e0726d1b541f888ce08ffe65ed6a163e6",
+  "internal_run_commit": "2ccab712a1c1f20a0d99a91157db3fbc5a20a397",
+  "internal_run_git_dirty": true,
+  "source_mapping": "docs/SOURCE_PROVENANCE.json",
+  "evidence_scope": "Published aggregate measurements, not raw trajectory or hidden references; cannot independently recompute historical score from this snapshot alone."
+}
